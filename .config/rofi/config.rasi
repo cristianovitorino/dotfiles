@@ -1,0 +1,15 @@
+configuration {
+ modi:               "drun,ssh";
+ theme:              "~/.config/rofi/themes/vitorino.rasi";
+ font:               "Source Sans Pro SemiBold 12";
+ combi-modi:         "drun,ssh";
+ width:              17;
+ eh:                 1;
+ bw:                 3;
+ lines:              10;
+ sidebar-mode:       false;
+ location:           0;
+ show-icons:         false;
+ icon-theme:         "Breeze Dark";
+ separator-style:    none;
+ }

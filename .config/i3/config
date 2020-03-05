@@ -1,0 +1,348 @@
+#         __                                                
+#   __  /'__`\                                              
+#  /\_\/\_\L\ \              __      __     _____     ____  
+#  \/\ \/_/_\_<_  _______  /'_ `\  /'__`\  /\ '__`\  /',__\ 
+#   \ \ \/\ \L\ \/\______\/\ \L\ \/\ \L\.\_\ \ \L\ \/\__, `\
+#    \ \_\ \____/\/______/\ \____ \ \__/.\_\\ \ ,__/\/\____/
+#     \/_/\/___/           \/___L\ \/__/\/_/ \ \ \/  \/___/ 
+#                            /\____/          \ \_\         
+#                            \_/__/            \/_/         
+#  
+#                                              Version 1.0.0
+#  
+#                                         Cristiano Vitorino
+#                       https://github.com/cristianovitorino
+#  
+
+# base configuration
+        # Set modifier
+        set $mod Mod4
+
+        #Requires xcape
+        # set $mod Mod3
+
+        # Set font
+        font pango: Source Sans Pro SemiBold 11
+        #font pango: Clear Sans Medium 12
+        #font pango: sans-serif 12
+
+        # Use Mouse+$mod to drag floating windows to their wanted position
+        floating_modifier $mod
+
+        # Start a terminal
+        #bindsym $mod+Return exec i3-sensible-terminal
+        bindsym $mod+Return exec terminator
+
+        # Hide and unhide Polybar
+        bindsym $mod+F12 exec polybar-msg cmd show
+        bindsym $mod+F11 exec polybar-msg cmd hide
+
+        # Start dmenu (a program launcher)
+        # after drun: -sidebar-mode
+        #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 11'
+        #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -show-icons -sidebar-mode -columns 3 -font 'sans-serif 11'
+        bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -sidebar-mode -font 'sans-serif 11'
+
+
+        # Picture-in-Picture window using $mod+spacebar to toggle
+        #bindsym $mod+p exec "i3-msg 'floating toggle; sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 10px 10px;'"
+
+        # Common apps keybinds
+        #bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+        #bindsym $mod+l exec i3lock -i ~/.wallpaper.png
+        #bindsym $mod+Shift+w exec podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7a
+        #bindsym $mod+Shift+f exec thunar;workspace 3;focus
+        #bindsym $mod+Shift+g exec geany
+
+        # Change volume
+        bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+        bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+        bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+
+        bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%-
+        bindsym XF86AudioMute exec amixer set Master toggle
+
+        # Music control
+        #bindsym XF86AudioNext exec playerctl next
+        #bindsym XF86AudioPrev exec playerctl prev
+        #bindsym XF86AudioPlay exec playerctl toggle
+        #bindsym XF86AudioStop exec playerctl stop
+
+        # Spotify related key bindings
+        bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+        bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+        bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+        bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+        # Kill focused window
+        bindsym $mod+q kill
+
+        # focus follows mouse
+        focus_follows_mouse yes
+
+        # Change focus
+        bindsym $mod+Left focus left
+        bindsym $mod+Down focus down
+        bindsym $mod+Up focus up
+        bindsym $mod+Right focus right
+
+        # Move focused window
+        bindsym $mod+Shift+Left move left
+        bindsym $mod+Shift+Down move down
+        bindsym $mod+Shift+Up move up
+        bindsym $mod+Shift+Right move right
+
+        # Split in horizontal orientation
+        bindsym $mod+h split h
+
+        # Split in vertical orientation
+        bindsym $mod+v split v
+
+        # Enter fullscreen mode for the focused container
+        #bindsym $mod+f+Shift fullscreen toggle
+
+        # Enter fullscreen
+        bindsym $mod+f fullscreen
+
+        # Change container layout split
+        bindsym $mod+s layout toggle split
+
+        # Toggle tiling / floating
+        bindsym $mod+space floating toggle
+
+        # Change focus between tiling / floating windows
+        bindsym $mod+Shift+space focus mode_toggle
+
+        # Window border settings
+        new_window pixel    0
+        new_float normal    0
+        #hide_edge_borders   none
+        hide_edge_borders   true
+
+        # Shortcut to change window border
+        bindsym Mod1+t border normal    0
+        bindsym Mod1+y border pixel     1
+        bindsym Mod1+u border none
+
+# workspace name
+        # Customize workspace name (Main)
+        set $WS1 "1"
+        set $WS2 "2"
+        set $WS3 "3"
+        set $WS4 "4"
+        set $WS5 "5"
+        set $WS6 "6"
+        set $WS7 "7"
+        set $WS8 "8"
+        set $WS9 "9"
+        set $WS0 "10"
+
+# switch to workspace
+        bindsym $mod+1 workspace $WS1
+        bindsym $mod+2 workspace $WS2
+        bindsym $mod+3 workspace $WS3
+        bindsym $mod+4 workspace $WS4
+        bindsym $mod+5 workspace $WS5
+        bindsym $mod+6 workspace $WS6
+        bindsym $mod+7 workspace $WS7
+        bindsym $mod+8 workspace $WS8
+        bindsym $mod+9 workspace $WS9
+        bindsym $mod+0 workspace $WS0
+
+# move container
+        # Move focused container to workspace
+        bindsym $mod+Shift+1 move container to workspace $WS1
+        bindsym $mod+Shift+2 move container to workspace $WS2
+        bindsym $mod+Shift+3 move container to workspace $WS3
+        bindsym $mod+Shift+4 move container to workspace $WS4
+        bindsym $mod+Shift+5 move container to workspace $WS5
+        bindsym $mod+Shift+6 move container to workspace $WS6
+        bindsym $mod+Shift+7 move container to workspace $WS7
+        bindsym $mod+Shift+8 move container to workspace $WS8
+        bindsym $mod+Shift+9 move container to workspace $WS9
+        bindsym $mod+Shift+0 move container to workspace $WS0
+
+# applications shortcuts
+        #bindsym $mod+F2 workspace $WS1; exec application
+        bindsym $mod+F1; exec brave-browser
+        bindsym $mod+F2; exec nautilus
+        bindsym $mod+F3; exec codium
+        bindsym $mod+F4; exec figma
+        bindsym $mod+F5; exec 
+        bindsym $mod+F6; exec 
+        bindsym $mod+F7; exec 
+        bindsym $mod+F8; exec 
+        bindsym $mod+F9; exec 
+
+# scripts shortcuts
+        # Screenshots
+                # Selection
+                bindsym $mod+Control+1 exec ~/Scripts/Personal/MaimSelection.sh
+                # Fullscreen
+                bindsym $mod+Control+2 exec ~/Scripts/Personal/MaimFullscreen.sh
+                # Window
+                bindsym $mod+Control+3 exec ~/Scripts/Personal/MaimWindow.sh
+
+# restart i3-gaps
+        # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+        bindsym $mod+Shift+r restart
+
+# exit i3-gaps
+        bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
+        bindsym $mod+Delete exec i3-msg exit
+
+# resize window
+        # Resize window (you can also use the mouse for that)
+        mode "resize" {
+                bindsym Left resize shrink width 5 px or 5 ppt
+                bindsym Down resize grow height 5 px or 5 ppt
+                bindsym Up resize shrink height 5 px or 5 ppt
+                bindsym Right resize grow width 5 px or 5 ppt
+                bindsym Return mode "default"
+        }
+        bindsym $mod+r mode "resize"
+
+# Colors
+set $background #1a1a1a
+set $foreground #ffffff
+set $unfocused  #1a1a1a
+#set $focused    #bcecff
+set $focused    #E94141
+set $urgent     #ffdb9e
+
+# Class                 Border      Background  Text        Indicator   Child indicator
+client.focused          $focused    $focused    $background $focused    $focused
+client.focused_inactive $unfocused  $unfocused  $foreground $unfocused  $unfocused
+client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocused
+client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
+
+# window rules
+        # Window rules, you can find the window class using xprop
+        # Default windows
+        for_window [class=".*"] border pixel 2
+        for_window [window_role="pop-up"] floating enable
+        for_window [window_role="task_dialog"] floating enable
+        for_window [title="Preferences$"] floating enable
+        for_window [Class="Lxappearance"] floating enable
+
+        # Window state handling
+                # Floating
+                for_window [class="qBittorrent"] floating enable
+                for_window [class="Gnome-calculator"] floating enable
+                for_window [class="Vmplayer"] floating enable
+                for_window [class="Riot"] floating enable
+                #for_window [class="Typora"] floating enable
+                for_window [class="Wire"] floating enable
+                for_window [class="Tresorit"] floating enable
+                for_window [class="Pavucontrol"] floating enable
+                for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] floating enable
+                for_window [class="log-in-to-todoist-nativefier-6c11dd"] floating enable
+
+                # Window position
+                for_window [class="Wire"] move absolute position center
+                for_window [class="Tresorit"] move absolute position center
+                for_window [class="qBittorrent"] move absolute position center
+                for_window [class="Pavucontrol"] move absolute position center
+                for_window [class="Gnome-calculator"] move absolute position center
+                for_window [class="Vmplayer"] move absolute position center
+                for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] move absolute position center
+                for_window [class="log-in-to-todoist-nativefier-6c11dd"] move absolute position center
+                for_window [class="Riot"] move absolute position center
+                #for_window [class="Typora"] move absolute position center
+
+                # Move window to Scratchpad
+                for_window [class="log-in-to-todoist-nativefier-6c11dd"] move scratchpad
+                #for_window [class="privateinternetaccess"] move scratchpad
+                for_window [class="tutanota-desktop"] move scratchpad
+
+                # Mark for Scratchpad
+                for_window [class="Tresorit"] mark "t", move scratchpad
+                #for_window [class="Typora"] mark "n", move scratchpad
+
+                # Scrachpad
+                # Make the currently focused window a scratchpad
+                bindsym $mod+Shift+minus move scratchpad
+
+                # Show the first scratchpad window
+                bindsym $mod+minus scratchpad show
+                #bindsym $mod+Control+t [con_mark="t"] scratchpad show
+                #bindsym $mod+Control+n [con_mark="n"] scratchpad show
+
+        # Disable borders for specific windows
+        #for_window [class="Wire"] border pixel 0
+        #for_window [class="log-in-to-todoist-nativefier-6c11dd"] border pixel 0
+        #for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] border pixel 0
+        #for_window [class="privateinternetaccess"] border pixel 0
+        #for_window [class="Tresorit"] border pixel 0
+        #for_window [class="qBittorrent"] border pixel 0
+        #for_window [class="Riot"] border pixel 0
+        #for_window [class="Typora"] border pixel 0
+
+# floating size
+        #floating_minimum_size 800 x 1000
+
+# Launchers
+        # Gnome Calculator
+        bindsym $mod+Shift+F10 exec gnome-calculator
+
+        # Typora
+        bindsym $mod+Shift+F9 exec typora
+
+# autostart
+        exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
+        exec --no-startup-id xsettingsd &
+        exec --no-startup-id picom --no-fading-openclose &
+        exec --no-startup-id nm-applet &
+        exec --no-startup-id imwheel &
+        exec --no-startup-id dunst &
+        exec --no-startup-id xow &
+        exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
+        exec --no-startup-id /home/Fedora/Scripts/Personal/Todoist.sh &
+        #exec --no-startup-id picom --no-fading-openclose --experimental-backends
+        #exec --no-startup-id /home/Fedora/Scripts/Personal/PocketCasts.sh &
+        #exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/riot im.riot.Riot &
+        #exec --no-startup-id "sh -c 'sleep 10; exec application'" # Execute as Shell
+
+        # delay for proper tray launching
+        exec "sleep 15; /home/Fedora/.config/polybar/launch.sh &"
+        exec "sleep 20; pulseaudio &"
+        #exec "sleep 20; /opt/piavpn/bin/pia-client &"
+        exec "sleep 20; /home/Fedora/.local/share/tresorit/tresorit &"
+        exec "sleep 20; /home/Fedora/Applications/BlueGlow-75d68e9-x86_64_30c56101f9faf83a5d4b16300c1194a2.AppImage &"
+        exec "sleep 20; /home/Fedora/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
+        exec "sleep 20; /home/Fedora/Applications/tutanota-desktop-linux_da9d1592a7f0c6a57fc0817d25134ea4.AppImage &"
+        #exec "sleep 20; redshift-gtk &"
+        #exec "sleep 30; polybar-msg cmd hide &"
+
+# set wallpaper
+        exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Usplash/levi-bare-ybw-0_Hfk1I-unsplash.jpg
+
+# window assignments
+        # Assign app to workspace, example: assign [class="Apps"] $ws1
+        assign [class="Wire"] $WS2
+        assign [class="figma"] $WS3
+        assign [class="log-in-to-todoist-nativefier-6c11dd"] $WS0
+        assign [class="privateinternetaccess"] $WS0
+        assign [class="Tresorit"] $WS0
+        assign [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] $WS3
+
+# smart gaps
+        #smart_gaps on
+        #gaps inner 10
+        #gaps outer 2
+
+        # Only enable outer gaps when there is exactly one container.
+        #smart_gaps inverse_outer
+
+# smart borders
+        # Activate (Always)
+        #smart_borders on
+
+        # Activate (Only when there are effectively no gaps).
+        #smart_borders no_gaps
+
+# smart edge borders
+        # Hide edge borders only if there is one window with no gaps
+        #hide_edge_borders smart_no_gaps
+
+# hide edge borders for single windows
+        hide_edge_borders smart
