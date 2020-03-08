@@ -103,6 +103,16 @@
         # Enter fullscreen
         bindsym $mod+f fullscreen
 
+        # Startup apps and window decs
+        #default_orientation horizontal
+        #workspace_layout tabbed
+        #new_window 1pixel
+
+        # Change container layout (stacked, tabbed, default)
+        bindsym $mod+Shift+s layout stacking
+        bindsym $mod+Shift+t layout tabbed
+        bindsym $mod+Shift+d layout default
+
         # Change container layout split
         bindsym $mod+s layout toggle split
 
@@ -120,14 +130,25 @@
 
         # Shortcut to change window border
         bindsym Mod1+t border normal    0
-        bindsym Mod1+y border pixel     1
+        bindsym Mod1+y border pixel     3
         bindsym Mod1+u border none
 
 # workspace name
         # Customize workspace name (Main)
-        set $WS1 "1"
-        set $WS2 "2"
-        set $WS3 "3"
+        #et $WS1 "1"
+        #set $WS2 "2"
+        #set $WS3 "3"
+        #set $WS4 "4"
+        #set $WS5 "5"
+        #set $WS6 "6"
+        #set $WS7 "7"
+        #set $WS8 "8"
+        #set $WS9 "9"
+        #set $WS0 "10"
+
+        set $WS1 ""
+        set $WS2 ""
+        set $WS3 ""
         set $WS4 "4"
         set $WS5 "5"
         set $WS6 "6"
@@ -205,12 +226,12 @@
 set $background #1a1a1a
 set $foreground #ffffff
 set $unfocused  #1a1a1a
-#set $focused    #bcecff
+set $indicator  #bcecff
 set $focused    #E94141
 set $urgent     #ffdb9e
 
 # Class                 Border      Background  Text        Indicator   Child indicator
-client.focused          $focused    $focused    $background $focused    $focused
+client.focused          $focused    $focused    $background $indicator  $focused
 client.focused_inactive $unfocused  $unfocused  $foreground $unfocused  $unfocused
 client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocused
 client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
@@ -218,7 +239,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 # window rules
         # Window rules, you can find the window class using xprop
         # Default windows
-        for_window [class=".*"] border pixel 2
+        for_window [class=".*"] border pixel 1
         for_window [window_role="pop-up"] floating enable
         for_window [window_role="task_dialog"] floating enable
         for_window [title="Preferences$"] floating enable
@@ -268,14 +289,14 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
                 #bindsym $mod+Control+n [con_mark="n"] scratchpad show
 
         # Disable borders for specific windows
-        #for_window [class="Wire"] border pixel 0
-        #for_window [class="log-in-to-todoist-nativefier-6c11dd"] border pixel 0
-        #for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] border pixel 0
-        #for_window [class="privateinternetaccess"] border pixel 0
-        #for_window [class="Tresorit"] border pixel 0
-        #for_window [class="qBittorrent"] border pixel 0
-        #for_window [class="Riot"] border pixel 0
-        #for_window [class="Typora"] border pixel 0
+        for_window [class="Wire"] border pixel 0
+        for_window [class="log-in-to-todoist-nativefier-6c11dd"] border pixel 0
+        for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] border pixel 0
+        for_window [class="mullvad vpn"] border pixel 0
+        for_window [class="Tresorit"] border pixel 0
+        for_window [class="qBittorrent"] border pixel 0
+        for_window [class="Riot"] border pixel 0
+        for_window [class="tutanota-desktop"] border pixel 0
 
 # floating size
         #floating_minimum_size 800 x 1000
@@ -305,7 +326,6 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         # delay for proper tray launching
         exec "sleep 15; /home/Fedora/.config/polybar/launch.sh &"
         exec "sleep 20; pulseaudio &"
-        #exec "sleep 20; /opt/piavpn/bin/pia-client &"
         exec "sleep 20; /home/Fedora/.local/share/tresorit/tresorit &"
         exec "sleep 20; /home/Fedora/Applications/BlueGlow-75d68e9-x86_64_30c56101f9faf83a5d4b16300c1194a2.AppImage &"
         exec "sleep 20; /home/Fedora/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
@@ -314,20 +334,19 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         #exec "sleep 30; polybar-msg cmd hide &"
 
 # set wallpaper
-        exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Usplash/levi-bare-ybw-0_Hfk1I-unsplash.jpg
+        exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Unsplash/levi-bare-ybw-0_Hfk1I-unsplash.jpg
 
 # window assignments
         # Assign app to workspace, example: assign [class="Apps"] $ws1
         assign [class="Wire"] $WS2
         assign [class="figma"] $WS3
         assign [class="log-in-to-todoist-nativefier-6c11dd"] $WS0
-        assign [class="privateinternetaccess"] $WS0
         assign [class="Tresorit"] $WS0
         assign [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] $WS3
 
 # smart gaps
         #smart_gaps on
-        #gaps inner 10
+        #gaps inner 20
         #gaps outer 2
 
         # Only enable outer gaps when there is exactly one container.
