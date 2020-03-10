@@ -135,20 +135,9 @@
 
 # workspace name
         # Customize workspace name (Main)
-        #et $WS1 "1"
-        #set $WS2 "2"
-        #set $WS3 "3"
-        #set $WS4 "4"
-        #set $WS5 "5"
-        #set $WS6 "6"
-        #set $WS7 "7"
-        #set $WS8 "8"
-        #set $WS9 "9"
-        #set $WS0 "10"
-
-        set $WS1 ""
-        set $WS2 ""
-        set $WS3 ""
+        set $WS1 "1"
+        set $WS2 "2"
+        set $WS3 "3"
         set $WS4 "4"
         set $WS5 "5"
         set $WS6 "6"
@@ -156,6 +145,17 @@
         set $WS8 "8"
         set $WS9 "9"
         set $WS0 "10"
+
+        #set $WS1 ""
+        #set $WS2 ""
+        #set $WS3 ""
+        #set $WS4 "4"
+        #set $WS5 "5"
+        #set $WS6 "6"
+        #set $WS7 "7"
+        #set $WS8 "8"
+        #set $WS9 "9"
+        #set $WS0 "10"
 
 # switch to workspace
         bindsym $mod+1 workspace $WS1
@@ -185,7 +185,7 @@
 # applications shortcuts
         #bindsym $mod+F2 workspace $WS1; exec application
         bindsym $mod+F1; exec brave-browser
-        bindsym $mod+F2; exec nautilus
+        bindsym $mod+F2; exec nemo
         bindsym $mod+F3; exec codium
         bindsym $mod+F4; exec figma
         bindsym $mod+F5; exec 
@@ -248,7 +248,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         # Window state handling
                 # Floating
                 for_window [class="qBittorrent"] floating enable
-                for_window [class="Gnome-calculator"] floating enable
+                for_window [class="Galculator"] floating enable
                 for_window [class="Vmplayer"] floating enable
                 for_window [class="Riot"] floating enable
                 #for_window [class="Typora"] floating enable
@@ -263,7 +263,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
                 for_window [class="Tresorit"] move absolute position center
                 for_window [class="qBittorrent"] move absolute position center
                 for_window [class="Pavucontrol"] move absolute position center
-                for_window [class="Gnome-calculator"] move absolute position center
+                for_window [class="Galculator"] move absolute position center
                 for_window [class="Vmplayer"] move absolute position center
                 for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] move absolute position center
                 for_window [class="log-in-to-todoist-nativefier-6c11dd"] move absolute position center
@@ -302,11 +302,15 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         #floating_minimum_size 800 x 1000
 
 # Launchers
-        # Gnome Calculator
-        bindsym $mod+Shift+F10 exec gnome-calculator
+        # Galculator
+        bindsym $mod+Shift+F10 exec galculator
 
         # Typora
         bindsym $mod+Shift+F9 exec typora
+
+        # Polybar
+        bindsym $mod+Shift+F8 exec sh /$HOME/.config/polybar/launch.sh
+        bindsym $mod+Shift+F7 exec pkill polybar
 
 # autostart
         exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &

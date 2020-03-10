@@ -92,6 +92,16 @@ fi
 
 sleep 1
 
+if [[ -d "$HOME/Development/dotfiles/.config/ranger" ]]
+then
+    echo "'$HOME/Development/dotfiles/.config/ranger' directory already exists. Proceeding..."
+else
+    echo "'$HOME/Development/dotfiles/.config/ranger' directory doesn't exist. Creating..."
+    mkdir "$HOME/Development/dotfiles/.config/ranger"
+fi
+
+sleep 1
+
 echo "Everything is in check, copying files..."
 
 yes | cp $HOME/.config/i3/config $HOME/Development/dotfiles/.config/i3/
@@ -106,7 +116,9 @@ yes | cp $HOME/.config/rofi/themes/vitorino.rasi $HOME/Development/dotfiles/.con
 yes | cp $HOME/.config/rofi/config.rasi $HOME/Development/dotfiles/.config/rofi/
 yes | cp $HOME/.config/dunst/dunstrc $HOME/Development/dotfiles/.config/dunst/
 
-yes | cp -r $HOME/Scripts/Personal $HOME/Development/dotfiles/Scripts/Personal
+yes | cp -r $HOME/.config/ranger/ $HOME/Development/dotfiles/.config/
+
+yes | cp -r $HOME/Scripts/Personal $HOME/Development/dotfiles/Scripts/
 yes | cp -r $HOME/Scripts/Polybar/ $HOME/Development/dotfiles/Scripts/
 
 sleep 2
