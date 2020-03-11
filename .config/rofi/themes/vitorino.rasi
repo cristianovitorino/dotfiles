@@ -15,13 +15,13 @@
 //  
 
 * {
-    background:                  #1a1a1a;
+    background:                  #15181c;
     foreground:                  #ffffff;
 
     normal-background:           #00000000;
     normal-foreground:           @foreground;
-    selected-normal-background:  #1e1e1e;
-    selected-normal-foreground:  #E94141;
+    selected-normal-background:  #1b1f24;
+    selected-normal-foreground:  #1793d1;
     alternate-normal-background: @normal-background;
     alternate-normal-foreground: @normal-foreground;
 
@@ -39,8 +39,8 @@
     alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
 
-    separatorcolor:              #E94141;
-    background-color:            #1a1a1a;
+    separatorcolor:              #1793d1;
+    background-color:            #15181c;
     border-color: @selected-normal-foreground;
 }
 

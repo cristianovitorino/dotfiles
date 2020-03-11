@@ -2,7 +2,7 @@
 
 echo "Install base personal environment..."
 
-pacman -S rofi nemo nemo-fileroller nemo-seahorse nemo-image-converter nemo-preview nemo-terminal p7zip maim lxappearance picom network-manager-applet imwheel dmenu dunst nitrogen feh xreader qt5ct kvantum-qt5 redshift terminator fish fontforge ranger w3m polkit-gnome --noconfirm
+pacman -S rofi nautilus nautilus-image-converter libnautilus-extension nautilus-terminal seahorse-nautilus sushi p7zip maim lxappearance picom network-manager-applet imwheel dmenu dunst nitrogen feh xreader qt5ct kvantum-qt5 redshift terminator fish fontforge ranger w3m polkit-gnome --noconfirm
 
 sleep 2
 

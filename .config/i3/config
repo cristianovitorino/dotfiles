@@ -185,7 +185,7 @@
 # applications shortcuts
         #bindsym $mod+F2 workspace $WS1; exec application
         bindsym $mod+F1; exec brave-browser
-        bindsym $mod+F2; exec nemo
+        bindsym $mod+F2; exec nautilus
         bindsym $mod+F3; exec codium
         bindsym $mod+F4; exec figma
         bindsym $mod+F5; exec 
@@ -222,13 +222,21 @@
         }
         bindsym $mod+r mode "resize"
 
-# Colors
+# Colors (Vitorino)
+#set $background #1a1a1a
+#set $foreground #ffffff
+#set $unfocused  #1a1a1a
+#set $indicator  #bcecff
+#set $focused    #E94141
+#set $urgent     #ffdb9e
+
+# Colors (Arch Linux)
 set $background #1a1a1a
 set $foreground #ffffff
 set $unfocused  #1a1a1a
-set $indicator  #bcecff
-set $focused    #E94141
-set $urgent     #ffdb9e
+set $indicator  #ffffff
+set $focused    #1793d1
+set $urgent     #ffeac7
 
 # Class                 Border      Background  Text        Indicator   Child indicator
 client.focused          $focused    $focused    $background $indicator  $focused
@@ -239,7 +247,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 # window rules
         # Window rules, you can find the window class using xprop
         # Default windows
-        for_window [class=".*"] border pixel 1
+        for_window [class=".*"] border pixel 3
         for_window [window_role="pop-up"] floating enable
         for_window [window_role="task_dialog"] floating enable
         for_window [title="Preferences$"] floating enable
