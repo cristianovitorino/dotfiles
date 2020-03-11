@@ -1,3 +1,19 @@
+#                                             
+#                                             
+#   _____     ___   __  __  __     __   _ __  
+#  /\ '__`\  / __`\/\ \/\ \/\ \  /'__`\/\`'__\
+#  \ \ \L\ \/\ \L\ \ \ \_/ \_/ \/\  __/\ \ \/ 
+#   \ \ ,__/\ \____/\ \___x___/'\ \____\\ \_\ 
+#    \ \ \/  \/___/  \/__//__/   \/____/ \/_/ 
+#     \ \_\                                   
+#      \/_/                                   
+#  
+#                                Version 1.0.0
+#  
+#                           Cristiano Vitorino
+#         https://github.com/cristianovitorino
+#  
+
 #!/bin/bash
 
 # Simple script to handle a DIY shutdown menu. When run you should see a bunch of options (shutdown, reboot etc.)
