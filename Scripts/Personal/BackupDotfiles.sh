@@ -116,10 +116,10 @@ yes | cp $HOME/.config/rofi/themes/vitorino.rasi $HOME/Development/dotfiles/.con
 yes | cp $HOME/.config/rofi/config.rasi $HOME/Development/dotfiles/.config/rofi/
 yes | cp $HOME/.config/dunst/dunstrc $HOME/Development/dotfiles/.config/dunst/
 
-yes | cp -r $HOME/.config/ranger/ $HOME/Development/dotfiles/.config/
+yes | cp -avr $HOME/.config/ranger/ $HOME/Development/dotfiles/.config/
 
-yes | cp -r $HOME/Scripts/Personal $HOME/Development/dotfiles/Scripts/
-yes | cp -r $HOME/Scripts/Polybar/ $HOME/Development/dotfiles/Scripts/
+yes | cp -avr $HOME/Scripts/Personal/ $HOME/Development/dotfiles/Scripts/
+yes | cp -avr $HOME/Scripts/Polybar/ $HOME/Development/dotfiles/Scripts/
 
 sleep 2
 

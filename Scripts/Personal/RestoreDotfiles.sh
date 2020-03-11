@@ -82,6 +82,16 @@ fi
 
 sleep 1
 
+if [[ -d "$HOME/.config/.config/ranger" ]]
+then
+    echo "'$HOME/.config/.config/ranger' directory already exists. Proceeding..."
+else
+    echo "'$HOME/.config/.config/ranger' directory doesn't exist. Creating..."
+    mkdir "$HOME/.config/.config/ranger"
+fi
+
+sleep 1
+
 echo "Everything is in check, copying files..."
 
 yes | cp .config/i3/config $HOME/.config/i3/
@@ -96,8 +106,10 @@ yes | cp .config/rofi/themes/vitorino.rasi $HOME/.config/rofi/themes/
 yes | cp .config/rofi/config.rasi $HOME/.config/rofi/
 yes | cp .config/dunst/dunstrc $HOME/.config/dunst/
 
-yes | cp -r Scripts/Personal $HOME/Scripts/Personal
-yes | cp -r Scripts/Polybar/ $HOME/Scripts/
+yes | cp -avr .config/ranger/ $HOME/.config/
+
+yes | cp -avr Scripts/Personal/ $HOME/Scripts/
+yes | cp -avr Scripts/Polybar/ $HOME/Scripts/
 
 sleep 2
 
