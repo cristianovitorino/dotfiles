@@ -39,9 +39,9 @@
 
         # Start dmenu (a program launcher)
         # after drun: -sidebar-mode
-        #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 11'
+        bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 11'
         #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -show-icons -sidebar-mode -columns 3 -font 'sans-serif 11'
-        bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -sidebar-mode -font 'sans-serif 11'
+        #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -sidebar-mode -font 'sans-serif 11'
 
 
         # Picture-in-Picture window using $mod+spacebar to toggle
@@ -247,7 +247,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 # window rules
         # Window rules, you can find the window class using xprop
         # Default windows
-        for_window [class=".*"] border pixel 3
+        for_window [class=".*"] border pixel 1
         for_window [window_role="pop-up"] floating enable
         for_window [window_role="task_dialog"] floating enable
         for_window [title="Preferences$"] floating enable
@@ -256,7 +256,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         # Window state handling
                 # Floating
                 for_window [class="qBittorrent"] floating enable
-                for_window [class="Galculator"] floating enable
+                for_window [class="Gnome-calculator"] floating enable
                 for_window [class="Vmplayer"] floating enable
                 for_window [class="Riot"] floating enable
                 #for_window [class="Typora"] floating enable
@@ -265,17 +265,19 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
                 for_window [class="Pavucontrol"] floating enable
                 for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] floating enable
                 for_window [class="log-in-to-todoist-nativefier-6c11dd"] floating enable
+                for_window [class="Spotify"] floating enable
 
                 # Window position
                 for_window [class="Wire"] move absolute position center
                 for_window [class="Tresorit"] move absolute position center
                 for_window [class="qBittorrent"] move absolute position center
                 for_window [class="Pavucontrol"] move absolute position center
-                for_window [class="Galculator"] move absolute position center
+                for_window [class="Gnome-calculator"] move absolute position center
                 for_window [class="Vmplayer"] move absolute position center
                 for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] move absolute position center
                 for_window [class="log-in-to-todoist-nativefier-6c11dd"] move absolute position center
                 for_window [class="Riot"] move absolute position center
+                for_window [class="Spotify"] move absolute position center
                 #for_window [class="Typora"] move absolute position center
 
                 # Move window to Scratchpad
@@ -310,8 +312,8 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         #floating_minimum_size 800 x 1000
 
 # Launchers
-        # Galculator
-        bindsym $mod+Shift+F10 exec galculator
+        # Gnome Calculator
+        bindsym $mod+Shift+F10 exec gnome-calculator
 
         # Typora
         bindsym $mod+Shift+F9 exec typora

@@ -3,7 +3,7 @@ configuration {
  theme:              "~/.config/rofi/themes/vitorino.rasi";
  font:               "Source Sans Pro SemiBold 12";
  combi-modi:         "drun,ssh";
- width:              17;
+ width:              18;
  eh:                 1;
  bw:                 3;
  lines:              10;

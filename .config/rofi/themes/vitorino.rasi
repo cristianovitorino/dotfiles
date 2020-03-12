@@ -46,10 +46,10 @@
 
 window {
     background-color: @background;
-    border:           2;
+    border:           1;
     font:             "sans-serif 14";
     fullscreen:       false;
-    padding:          12;
+    padding:          24;
     width:            600;
 }
 
@@ -74,8 +74,8 @@ listview {
     border-color: @separatorcolor;
     spacing:      2px;
     fixed-height: 0;
-    border:       2px solid 0px 2px solid;
-    lines:       5;
+    border:       1px dash 0px 0px;
+    lines:        5;
 }
 
 element {
@@ -152,7 +152,7 @@ button selected {
 }
 
 inputbar {
-    padding:    30px;
+    padding:    10px;
     spacing:    0px;
     text-color: @normal-foreground;
     children:   [prompt, textbox-prompt-colon, entry, case-indicator];
