@@ -112,6 +112,7 @@ yes | cp $HOME/.Xresources $HOME/Development/dotfiles/
 yes | cp $HOME/.Xmodmap $HOME/Development/dotfiles/
 yes | cp $HOME/.bash_profile $HOME/Development/dotfiles/
 yes | cp $HOME/.bashrc $HOME/Development/dotfiles/
+yes | cp $HOME/.stalonetrayrc $HOME/Development/dotfiles/
 yes | cp $HOME/.config/rofi/themes/vitorino.rasi $HOME/Development/dotfiles/.config/rofi/themes/
 yes | cp $HOME/.config/rofi/config.rasi $HOME/Development/dotfiles/.config/rofi/
 yes | cp $HOME/.config/dunst/dunstrc $HOME/Development/dotfiles/.config/dunst/

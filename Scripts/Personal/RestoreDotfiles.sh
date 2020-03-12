@@ -102,6 +102,7 @@ yes | cp .Xresources $HOME/
 yes | cp .Xmodmap $HOME/
 yes | cp .bash_profile $HOME/
 yes | cp .bashrc $HOME/
+yes | cp .stalonetrayrc $HOME/
 yes | cp .config/rofi/themes/vitorino.rasi $HOME/.config/rofi/themes/
 yes | cp .config/rofi/config.rasi $HOME/.config/rofi/
 yes | cp .config/dunst/dunstrc $HOME/.config/dunst/
