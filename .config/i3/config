@@ -320,6 +320,10 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         bindsym $mod+Shift+F8 exec sh /$HOME/.config/polybar/launch.sh
         bindsym $mod+Shift+F7 exec pkill polybar
 
+        # Stalonebar
+        bindsym $mod+Shift+F6 exec stalonetray
+        bindsym $mod+Shift+F5 exec pkill stalonetray
+
 # autostart
         exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
         exec --no-startup-id xsettingsd &
@@ -328,6 +332,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         exec --no-startup-id imwheel &
         exec --no-startup-id dunst &
         exec --no-startup-id xow &
+        exec --no-startup-id redshift-gtk &
         exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
         exec --no-startup-id /home/Fedora/Scripts/Personal/Todoist.sh &
         #exec --no-startup-id picom --no-fading-openclose --experimental-backends
