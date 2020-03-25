@@ -104,7 +104,7 @@ sleep 1
 
 echo "Everything is in check, copying files..."
 
-yes | cp $HOME/.config/i3/config $HOME/Development/dotfiles/.config/i3/
+cp -f $HOME/.config/i3/config $HOME/Development/dotfiles/.config/i3/
 yes | cp $HOME/.config/polybar/i3-polybar.conf $HOME/Development/dotfiles/.config/polybar/
 yes | cp $HOME/.config/redshift/redshift.conf $HOME/Development/dotfiles/.config/redshift/
 yes | cp $HOME/.config/picom.conf $HOME/Development/dotfiles/.config/
