@@ -105,22 +105,22 @@ sleep 1
 echo "Everything is in check, copying files..."
 
 cp -f $HOME/.config/i3/config $HOME/Development/dotfiles/.config/i3/
-yes | cp $HOME/.config/polybar/i3-polybar.conf $HOME/Development/dotfiles/.config/polybar/
-yes | cp $HOME/.config/redshift/redshift.conf $HOME/Development/dotfiles/.config/redshift/
-yes | cp $HOME/.config/picom.conf $HOME/Development/dotfiles/.config/
-yes | cp $HOME/.Xresources $HOME/Development/dotfiles/
-yes | cp $HOME/.Xmodmap $HOME/Development/dotfiles/
-yes | cp $HOME/.bash_profile $HOME/Development/dotfiles/
-yes | cp $HOME/.bashrc $HOME/Development/dotfiles/
-yes | cp $HOME/.stalonetrayrc $HOME/Development/dotfiles/
-yes | cp $HOME/.config/rofi/themes/vitorino.rasi $HOME/Development/dotfiles/.config/rofi/themes/
-yes | cp $HOME/.config/rofi/config.rasi $HOME/Development/dotfiles/.config/rofi/
-yes | cp $HOME/.config/dunst/dunstrc $HOME/Development/dotfiles/.config/dunst/
+cp -f $HOME/.config/polybar/i3-polybar.conf $HOME/Development/dotfiles/.config/polybar/
+cp -f $HOME/.config/redshift/redshift.conf $HOME/Development/dotfiles/.config/redshift/
+cp -f $HOME/.config/picom.conf $HOME/Development/dotfiles/.config/
+cp -f $HOME/.Xresources $HOME/Development/dotfiles/
+cp -f $HOME/.Xmodmap $HOME/Development/dotfiles/
+cp -f $HOME/.bash_profile $HOME/Development/dotfiles/
+cp -f $HOME/.bashrc $HOME/Development/dotfiles/
+cp -f $HOME/.stalonetrayrc $HOME/Development/dotfiles/
+cp -f $HOME/.config/rofi/themes/vitorino.rasi $HOME/Development/dotfiles/.config/rofi/themes/
+cp -f $HOME/.config/rofi/config.rasi $HOME/Development/dotfiles/.config/rofi/
+cp -f $HOME/.config/dunst/dunstrc $HOME/Development/dotfiles/.config/dunst/
 
-yes | cp -avr $HOME/.config/ranger/ $HOME/Development/dotfiles/.config/
+cp -f -avr $HOME/.config/ranger/ $HOME/Development/dotfiles/.config/
 
-yes | cp -avr $HOME/Scripts/Personal/ $HOME/Development/dotfiles/Scripts/
-yes | cp -avr $HOME/Scripts/Polybar/ $HOME/Development/dotfiles/Scripts/
+cp -f -avr $HOME/Scripts/Personal/ $HOME/Development/dotfiles/Scripts/
+cp -f -avr $HOME/Scripts/Polybar/ $HOME/Development/dotfiles/Scripts/
 
 sleep 2
 

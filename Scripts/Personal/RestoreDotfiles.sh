@@ -82,35 +82,39 @@ fi
 
 sleep 1
 
-if [[ -d "$HOME/.config/.config/ranger" ]]
+if [[ -d "$HOME/.config/ranger" ]]
 then
-    echo "'$HOME/.config/.config/ranger' directory already exists. Proceeding..."
+    echo "'$HOME/.config/ranger' directory already exists. Proceeding..."
 else
-    echo "'$HOME/.config/.config/ranger' directory doesn't exist. Creating..."
-    mkdir "$HOME/.config/.config/ranger"
+    echo "'$HOME/.config/ranger' directory doesn't exist. Creating..."
+    mkdir "$HOME/.config/ranger"
 fi
 
 sleep 1
 
 echo "Everything is in check, copying files..."
 
-yes | cp .config/i3/config $HOME/.config/i3/
-yes | cp .config/polybar/i3-polybar.conf $HOME/.config/polybar/
-yes | cp .config/redshift/redshift.conf $HOME/.config/redshift/
-yes | cp .config/picom.conf $HOME/.config/
-yes | cp .Xresources $HOME/
-yes | cp .Xmodmap $HOME/
-yes | cp .bash_profile $HOME/
-yes | cp .bashrc $HOME/
-yes | cp .stalonetrayrc $HOME/
-yes | cp .config/rofi/themes/vitorino.rasi $HOME/.config/rofi/themes/
-yes | cp .config/rofi/config.rasi $HOME/.config/rofi/
-yes | cp .config/dunst/dunstrc $HOME/.config/dunst/
+cd ..
 
-yes | cp -avr .config/ranger/ $HOME/.config/
+cd ..
 
-yes | cp -avr Scripts/Personal/ $HOME/Scripts/
-yes | cp -avr Scripts/Polybar/ $HOME/Scripts/
+cp -f .config/i3/config $HOME/.config/i3/
+cp -f .config/polybar/i3-polybar.conf $HOME/.config/polybar/
+cp -f .config/redshift/redshift.conf $HOME/.config/redshift/
+cp -f .config/picom.conf $HOME/.config/
+cp -f .Xresources $HOME/
+cp -f .Xmodmap $HOME/
+cp -f .bash_profile $HOME/
+cp -f .bashrc $HOME/
+cp -f .stalonetrayrc $HOME/
+cp -f .config/rofi/themes/vitorino.rasi $HOME/.config/rofi/themes/
+cp -f .config/rofi/config.rasi $HOME/.config/rofi/
+cp -f .config/dunst/dunstrc $HOME/.config/dunst/
+
+cp -f -avr .config/ranger/ $HOME/.config/
+
+cp -f -avr Scripts/Personal/ $HOME/Scripts/
+cp -f -avr Scripts/Polybar/ $HOME/Scripts/
 
 sleep 2
 
