@@ -1,4 +1,8 @@
 <h2 align="center">
+    <a href="https://www.codefactor.io/repository/github/cristianovitorino/dotfiles"><img src="https://www.codefactor.io/repository/github/cristianovitorino/dotfiles/badge" alt="CodeFactor" /></a>
+</h2>
+
+<h2 align="center">
     red
 </h2>
 
