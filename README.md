@@ -4,7 +4,7 @@
     <img src="https://www.codefactor.io/repository/github/cristianovitorino/dotfiles/badge" alt="CodeFactor">
   </a>
   <a href="https://www.codacy.com/manual/cristianovitorino/dotfiles?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cristianovitorino/dotfiles&amp;utm_campaign=Badge_Grade">
-     <img src="https://api.codacy.com/project/badge/Grade/f57a2abf4015418b8bf78cfea678d906">
+    <img src="https://api.codacy.com/project/badge/Grade/f57a2abf4015418b8bf78cfea678d906">
   </a>
 </p>
 
