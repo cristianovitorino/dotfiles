@@ -21,6 +21,9 @@
 </p>
 
 ---
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/44e9ccf8f3de4c29b2a60642a2cdcc6f)](https://app.codacy.com/manual/cristianovitorino/dotfiles?utm_source=github.com&utm_medium=referral&utm_content=cristianovitorino/dotfiles&utm_campaign=Badge_Grade_Dashboard)
+
 ## Donation
 If you like my work and want to show some :heart:
 
