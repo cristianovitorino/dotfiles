@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #                                             
 #                                             
 #   _____     ___   __  __  __     __   _ __  
@@ -13,8 +15,6 @@
 #                           Cristiano Vitorino
 #         https://github.com/cristianovitorino
 #  
-
-#!/bin/bash
 
 # Simple script to handle a DIY shutdown menu. When run you should see a bunch of options (shutdown, reboot etc.)
 #

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec kcalc
+exec gnome-calculator

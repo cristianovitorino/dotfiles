@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec killall kcalc
+exec killall gnome-calculatora

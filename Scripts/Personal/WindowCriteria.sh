@@ -11,7 +11,7 @@
 
 # Script by ack006.
 
-PROGNAME=`basename "$0"`
+PROGNAME=$(basename "$0")
 
 # Check for xwininfo and xprop
 for cmd in xwininfo xprop; do
@@ -27,7 +27,7 @@ match_qstring='"[^"\\]*(\\.[^"\\]*)*"' # NOTE: Adds 1 backreference
 
 {
     # Run xwininfo, get window id
-    window_id=`xwininfo -int | sed -nre "s/^xwininfo: Window id: ($match_int) .*$/\1/p"`
+    window_id=$(xwininfo -int | sed -nre "s/^xwininfo: Window id: ($match_int) .*$/\1/p")
     echo "id=$window_id"
 
     # Run xprop, transform its output into i3 criteria. Handle fallback to
