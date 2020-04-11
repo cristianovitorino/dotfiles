@@ -3,11 +3,12 @@
   <a href="https://www.codefactor.io/repository/github/cristianovitorino/dotfiles">
     <img src="https://www.codefactor.io/repository/github/cristianovitorino/dotfiles/badge" alt="CodeFactor">
   </a>
-  <a href="https://www.codacy.com/manual/cristianovitorino/dotfiles?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cristianovitorino/dotfiles&amp;utm_campaign=Badge_Grade">
-    <img src="https://api.codacy.com/project/badge/Grade/f57a2abf4015418b8bf78cfea678d906">
-  </a>
   <a href="https://www.codefactor.io/repository/github/cristianovitorino/dotfiles">
     <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/cristianovitorino/dotfiles">
+  </a>
+    </a>
+  <a href="https://github.com/prettier/prettier">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
   </a>
 </p>
 
