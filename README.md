@@ -10,6 +10,9 @@
   <a href="https://github.com/prettier/prettier">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
   </a>
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y79WNXRNJCHB4&source=url">
+    <img alt="PayPal" src="https://img.shields.io/badge/PayPal-Donate-brightgreen?style=flat-square">
+  </a>
 </p>
 
 <h2 align="center">
