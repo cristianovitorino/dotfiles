@@ -43,3 +43,10 @@ If you like my work and want to show some :heart:
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcristianovitorino%2Fdotfiles.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcristianovitorino%2Fdotfiles?ref=badge_large)
+
+---
+
+
+<h6 align="center">
+  Configured with :heart: from :brazil:!
+</h6>
