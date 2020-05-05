@@ -15,8 +15,9 @@
 #  
 
 # .bash_profile
-
+export PATH=$PATH:$HOME/Applications/
 export PATH=$PATH:$HOME/Scripts/Personal
+export PATH=$PATH:$HOME/Applications/mdBook
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then

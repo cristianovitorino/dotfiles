@@ -16,6 +16,8 @@
 
 # base configuration
         # Set modifier
+        # Alt (Control) = Mod4
+        # Left Control (Alt) = Mod1
         set $mod Mod4
 
         #Requires xcape
@@ -47,16 +49,9 @@
         # Picture-in-Picture window using $mod+spacebar to toggle
         #bindsym $mod+p exec "i3-msg 'floating toggle; sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 10px 10px;'"
 
-        # Common apps keybinds
-        #bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
-        #bindsym $mod+l exec i3lock -i ~/.wallpaper.png
-        #bindsym $mod+Shift+w exec podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7a
-        #bindsym $mod+Shift+f exec thunar;workspace 3;focus
-        #bindsym $mod+Shift+g exec geany
-
-        # Change volume
-        bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
-        bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+        # Pulse Audio volume
+        bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+
+        bindsym XF86AudioLowerVolume exec amixer -q set Master 10%-
         bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+
         bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%-
         bindsym XF86AudioMute exec amixer set Master toggle
@@ -68,10 +63,31 @@
         #bindsym XF86AudioStop exec playerctl stop
 
         # Spotify related key bindings
-        bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-        bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-        bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-        bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+        #bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+        #bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+        #bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+        #bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+        #bindsym $mod+Ctrl+space exec playerctl play-pause
+
+        # Media player controls
+                # All
+                bindsym XF86AudioPlay exec playerctl -a play-pause
+                bindsym XF86AudioStop exec playerctl -a stop
+                bindsym XF86AudioNext exec playerctl -a next
+                bindsym XF86AudioPrev exec playerctl -a previous
+
+                # Spotify
+                bindsym Control+XF86AudioPlay exec playerctl -p spotify play-pause
+                bindsym Control+XF86AudioStop exec playerctl -p spotify stop
+                bindsym Control+XF86AudioNext exec playerctl -p spotify next
+                bindsym Control+XF86AudioPrev exec playerctl -p spotify previous
+
+                # Pocket Casts
+                bindsym Shift+XF86AudioPlay exec playerctl -p pocket_casts_linux play-pause
+                bindsym Shift+XF86AudioStop exec playerctl -p pocket_casts_linux stop
+                bindsym Shift+XF86AudioNext exec playerctl -p pocket_casts_linux next
+                bindsym Shift+XF86AudioPrev exec playerctl -p ppocket_casts_linux previous
 
         # Kill focused window
         bindsym $mod+q kill
@@ -135,27 +151,28 @@
 
 # workspace name
         # Customize workspace name (Main)
-        set $WS1 "1"
-        set $WS2 "2"
-        set $WS3 "3"
-        set $WS4 "4"
-        set $WS5 "5"
-        set $WS6 "6"
-        set $WS7 "7"
-        set $WS8 "8"
-        set $WS9 "9"
-        set $WS0 "10"
 
-        #set $WS1 ""
-        #set $WS2 ""
-        #set $WS3 ""
-        #set $WS4 "4"
-        #set $WS5 "5"
-        #set $WS6 "6"
-        #set $WS7 "7"
-        #set $WS8 "8"
-        #set $WS9 "9"
-        #set $WS0 "10"
+        #set $WS1 "1: 1"
+        #set $WS2 "2: 2"
+        #set $WS3 "3: 3"
+        #set $WS4 "4: 4"
+        #set $WS5 "5: 5"
+        #set $WS6 "5: 6"
+        #set $WS7 "7: 7"
+        #set $WS8 "8: 8"
+        #set $WS9 "9: 9"
+        #set $WS0 "10: 10"
+
+        set $WS1 "1: "
+        set $WS2 "2: "
+        set $WS3 "3: "
+        set $WS4 "4: "
+        set $WS5 "5: "
+        set $WS6 "5: "
+        set $WS7 "7: "
+        set $WS8 "8: "
+        set $WS9 "9: "
+        set $WS0 "10: "
 
 # switch to workspace
         bindsym $mod+1 workspace $WS1
@@ -184,24 +201,24 @@
 
 # applications shortcuts
         #bindsym $mod+F2 workspace $WS1; exec application
-        bindsym $mod+F1; exec brave-browser
+        bindsym $mod+F1; exec opera
         bindsym $mod+F2; exec nautilus
         bindsym $mod+F3; exec codium
         bindsym $mod+F4; exec figma
         bindsym $mod+F5; exec 
         bindsym $mod+F6; exec 
-        bindsym $mod+F7; exec 
-        bindsym $mod+F8; exec 
+        bindsym $mod+F7; exec spotify
+        bindsym $mod+F8; exec qbittorrent
         bindsym $mod+F9; exec 
 
 # scripts shortcuts
         # Screenshots
                 # Selection
-                bindsym $mod+Control+1 exec ~/Scripts/Personal/MaimSelection.sh
+                bindsym $mod+Control+1 exec ~/Scripts/MaimSelection.sh
                 # Fullscreen
-                bindsym $mod+Control+2 exec ~/Scripts/Personal/MaimFullscreen.sh
+                bindsym $mod+Control+2 exec ~/Scripts/MaimFullscreen.sh
                 # Window
-                bindsym $mod+Control+3 exec ~/Scripts/Personal/MaimWindow.sh
+                bindsym $mod+Control+3 exec ~/Scripts/MaimWindow.sh
 
 # restart i3-gaps
         # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -223,20 +240,20 @@
         bindsym $mod+r mode "resize"
 
 # Colors (Vitorino)
+set $background #141414
+set $foreground #DCDCDC
+set $unfocused  #323232
+set $indicator  #FFDB9E
+set $focused    #DCDCDC
+set $urgent     #E94141
+
+# Colors (Arch Linux)
 #set $background #1a1a1a
 #set $foreground #ffffff
 #set $unfocused  #1a1a1a
-#set $indicator  #bcecff
-#set $focused    #E94141
-#set $urgent     #ffdb9e
-
-# Colors (Arch Linux)
-set $background #1a1a1a
-set $foreground #ffffff
-set $unfocused  #1a1a1a
-set $indicator  #ffffff
-set $focused    #1793d1
-set $urgent     #ffeac7
+#set $indicator  #ffffff
+#set $focused    #1793d1
+#set $urgent     #ffeac7
 
 # Class                 Border      Background  Text        Indicator   Child indicator
 client.focused          $focused    $focused    $background $indicator  $focused
@@ -258,58 +275,67 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
                 for_window [class="qBittorrent"] floating enable
                 for_window [class="Gnome-calculator"] floating enable
                 for_window [class="Vmplayer"] floating enable
-                for_window [class="Riot"] floating enable
-                #for_window [class="Typora"] floating enable
-                for_window [class="Wire"] floating enable
                 for_window [class="Tresorit"] floating enable
                 for_window [class="Pavucontrol"] floating enable
-                for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] floating enable
-                for_window [class="log-in-to-todoist-nativefier-6c11dd"] floating enable
+                for_window [class="pocket-casts-linux"] floating enable
+                for_window [class="Todoist"] floating enable
                 for_window [class="Spotify"] floating enable
+                for_window [class="tutanota-desktop"] floating enable
+                for_window [class="Solaar"] floating enable
+                for_window [class="Piper"] floating enable
+                for_window [class="Colorpicker"] floating enable
 
                 # Window position
-                for_window [class="Wire"] move absolute position center
-                for_window [class="Tresorit"] move absolute position center
+                #for_window [class="Wire"] move absolute position center
+                for_window [class="Tresorit"] resize set 500 500, move absolute position center
                 for_window [class="qBittorrent"] move absolute position center
                 for_window [class="Pavucontrol"] move absolute position center
                 for_window [class="Gnome-calculator"] move absolute position center
                 for_window [class="Vmplayer"] move absolute position center
-                for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] move absolute position center
-                for_window [class="log-in-to-todoist-nativefier-6c11dd"] move absolute position center
-                for_window [class="Riot"] move absolute position center
-                for_window [class="Spotify"] move absolute position center
+                for_window [class="pocket-casts-linux"] move absolute position center
+                for_window [class="Todoist"] move absolute position center
+                for_window [class="Solaar"] move absolute position center
+                for_window [class="Piper"] move absolute position center
+                for_window [class="Colorpicker"] move absolute position center
+
+                # Resize floating windows to a specific size
+                for_window [class="Spotify"] resize set 2200 1200, move absolute position center
+                for_window [class="tutanota-desktop"] resize set 1600 1300, move absolute position center
+
                 #for_window [class="Typora"] move absolute position center
 
                 # Move window to Scratchpad
-                for_window [class="log-in-to-todoist-nativefier-6c11dd"] move scratchpad
+                for_window [class="Todoist"] move scratchpad
                 #for_window [class="privateinternetaccess"] move scratchpad
                 for_window [class="tutanota-desktop"] move scratchpad
+                for_window [class="Tresorit"] move scratchpad
 
                 # Mark for Scratchpad
-                for_window [class="Tresorit"] mark "t", move scratchpad
-                #for_window [class="Typora"] mark "n", move scratchpad
+                for_window [class="tutanota-desktop"] mark "Emails", move scratchpad
+                for_window [class="Todoist"] mark "Notes", move scratchpad
 
                 # Scrachpad
                 # Make the currently focused window a scratchpad
                 bindsym $mod+Shift+minus move scratchpad
 
-                # Show the first scratchpad window
+                # Show specific scratchpad windows
                 bindsym $mod+minus scratchpad show
-                #bindsym $mod+Control+t [con_mark="t"] scratchpad show
-                #bindsym $mod+Control+n [con_mark="n"] scratchpad show
+                bindsym $mod+Control+e [con_mark="Emails"] scratchpad show
+                bindsym $mod+Control+n [con_mark="Notes"] scratchpad show
 
         # Disable borders for specific windows
-        for_window [class="Wire"] border pixel 0
-        for_window [class="log-in-to-todoist-nativefier-6c11dd"] border pixel 0
-        for_window [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] border pixel 0
+        #for_window [class="Wire"] border pixel 0
+        for_window [class="Todoist"] border pixel 0
+        for_window [class="pocket-casts-linux"] border pixel 0
         for_window [class="mullvad vpn"] border pixel 0
         for_window [class="Tresorit"] border pixel 0
         for_window [class="qBittorrent"] border pixel 0
-        for_window [class="Riot"] border pixel 0
+        #for_window [class="Riot"] border pixel 0
         for_window [class="tutanota-desktop"] border pixel 0
+        for_window [class="stalonetray"] border pixel 0
 
 # floating size
-        #floating_minimum_size 800 x 1000
+        #floating_minimum_size 2000 x 1000
 
 # Launchers
         # Gnome Calculator
@@ -319,36 +345,46 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         bindsym $mod+Shift+F9 exec typora
 
         # Polybar
-        bindsym $mod+Shift+F8 exec sh /$HOME/.config/polybar/launch.sh
+        bindsym $mod+Shift+F8 exec sh ~/.config/polybar/launch
         bindsym $mod+Shift+F7 exec pkill polybar
 
-        # Stalonebar
-        bindsym $mod+Shift+F6 exec stalonetray
-        bindsym $mod+Shift+F5 exec pkill stalonetray
+        # Stalonetrays
+        bindsym $mod+Shift+F6 exec sh ~/Scripts/Stalonetray.sh
+        bindsym $mod+Shift+F5 exec sh ~/Scripts/KillStalonetray.sh
 
 # autostart
         exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
         exec --no-startup-id xsettingsd &
         exec --no-startup-id picom --no-fading-openclose &
         exec --no-startup-id nm-applet &
-        exec --no-startup-id imwheel &
         exec --no-startup-id dunst &
         exec --no-startup-id xow &
         exec --no-startup-id redshift-gtk &
-        exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
-        exec --no-startup-id /home/Fedora/Scripts/Personal/Todoist.sh &
+        exec --no-startup-id todoist &
+        exec --no-startup-id solaar &
+        exec --no-startup-id discord &
+        exec --no-startup-id signal-desktop &
+        exec --no-startup-id ~/.local/share/tresorit/tresorit &
+        exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+        exec --no-startup-id ~/.config/polybar/launch &
+        #exec --no-startup-id ~/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &
+        exec --no-startup-id ~/Applications/tutanota-desktop-linux_aa4b7e795e53c8654ea418e65a025bc0.AppImage &
+        #exec --no-startup-id ~/session-messenger-desktop-linux-x86_64-1.0.7_4cc20dfd1738e0f1ecde1601f43c01c6.AppImage &
+
         #exec --no-startup-id picom --no-fading-openclose --experimental-backends
         #exec --no-startup-id /home/Fedora/Scripts/Personal/PocketCasts.sh &
         #exec --no-startup-id /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/riot im.riot.Riot &
         #exec --no-startup-id "sh -c 'sleep 10; exec application'" # Execute as Shell
 
         # delay for proper tray launching
-        exec "sleep 15; /home/Fedora/.config/polybar/launch.sh &"
-        exec "sleep 20; pulseaudio &"
-        exec "sleep 20; /home/Fedora/.local/share/tresorit/tresorit &"
-        exec "sleep 20; /home/Fedora/Applications/BlueGlow-75d68e9-x86_64_30c56101f9faf83a5d4b16300c1194a2.AppImage &"
-        exec "sleep 20; /home/Fedora/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
-        exec "sleep 20; /home/Fedora/Applications/tutanota-desktop-linux_da9d1592a7f0c6a57fc0817d25134ea4.AppImage &"
+        #exec "sleep 15; /home/Fedora/.config/polybar/launch.sh &"
+        exec "sleep 5; riot-desktop &"
+        exec "sleep 3; imwheel &"
+        exec "sleep 5; pulseaudio &"
+        #exec "sleep 5;~/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
+        #exec "sleep 20; /home/Fedora/.local/share/tresorit/tresorit &"
+        #exec "sleep 20; /home/Fedora/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
+        #exec "sleep 20; /home/Fedora/Applications/tutanota-desktop-linux_da9d1592a7f0c6a57fc0817d25134ea4.AppImage &"
         #exec "sleep 20; redshift-gtk &"
         #exec "sleep 30; polybar-msg cmd hide &"
 
@@ -357,11 +393,17 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
 # window assignments
         # Assign app to workspace, example: assign [class="Apps"] $ws1
-        assign [class="Wire"] $WS2
-        assign [class="figma"] $WS3
-        assign [class="log-in-to-todoist-nativefier-6c11dd"] $WS0
-        assign [class="Tresorit"] $WS0
-        assign [class="podcast-web-player-online-podcast-player-pocket-casts-nativefier-d2c7ab"] $WS3
+        #assign [class="Wire"] $WS3
+        assign [class="discord"] $WS3
+        assign [class="Signal"] $WS3
+        assign [class="Riot"] $WS3
+        assign [class="figma"] $WS4
+        assign [class="Gimp-2.10"] $WS4
+        assign [class="Lutris"] $WS5
+        assign [class="Steam"] $WS5
+        assign [class="pocket-casts-linux"] $WS6
+        assign [class="Spotify"] $WS7
+        assign [class="qBittorrent"] $WS8
 
 # smart gaps
         #smart_gaps on
@@ -376,7 +418,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         #smart_borders on
 
         # Activate (Only when there are effectively no gaps).
-        #smart_borders no_gaps
+        #smart_borders no_gapsbar
 
 # smart edge borders
         # Hide edge borders only if there is one window with no gaps

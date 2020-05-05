@@ -18,10 +18,21 @@
 # ~/.bashrc
 #
 
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+
+# advcp
+alias cp='advcp -gR'
+alias mv='advmv -g'
+
+# Check weather
+alias wt='curl wttr.in/Cariacica'
+
+# navi
+source <(navi widget bash)
 
 # shml is a shell markup language required for this type of bash styling.
 # https://odb.github.io/shml/

@@ -35,7 +35,7 @@ fuzzy_edges 0
 # geometry <geometry>        # tray's geometry in standard X notation; width and
                              # height are specified in slot_size multiples
 #geometry 1x1+1615+10
-geometry 1x1+2200+8
+geometry 5x1+2100+2
 #954
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
@@ -50,7 +50,8 @@ grow_gravity NE
 icon_gravity NE
 
 # icon_size <int>            # specifies dimensions of typical icon slot
-icon_size 20
+#icon_size 24
+icon_size 16
 
 # log_level <level>          # controls the amount of logging output, level can
                              # be err (default), info, or trace (enabled only
@@ -99,6 +100,7 @@ scrollbars none
 
 # slot_size <int>            # specifies size of icon slot, defaults to
                              # icon_size NEW in 0.8.
+slot_size 20
 
 # skip_taskbar [<bool>]      # hide tray`s window from the taskbar
 skip_taskbar true
@@ -124,7 +126,7 @@ vertical false
 
 # window_layer <layer>       # set the EWMH-compatible window layer; one of:
                              # bottom, normal, top
-window_layer bottom
+window_layer top
 
 # window_strut <mode>        # enable/disable window struts for tray window (to
                              # avoid converting of tray window by maximized
