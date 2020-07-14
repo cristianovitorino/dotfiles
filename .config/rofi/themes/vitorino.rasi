@@ -18,17 +18,18 @@
     background:                  #141414;
     foreground:                  #DCDCDC;
 
-    normal-background:           #00000000;
+    normal-background:           #141414;
     normal-foreground:           @foreground;
-    selected-normal-background:  #191919;
-    selected-normal-foreground:  #646464;
+    //selected-normal-background:  #101010;
+    selected-normal-foreground:  #8BE9FD;
     alternate-normal-background: @normal-background;
     alternate-normal-foreground: @normal-foreground;
 
     urgent-background:           #ffdb9e20;
     urgent-foreground:           @foreground;
     selected-urgent-background:  @urgent-background;
-    selected-urgent-foreground:  #E94141;
+    //selected-urgent-foreground:  #E04848;
+    selected-urgent-foreground:  #E04848;
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @urgent-foreground;
 
@@ -39,22 +40,23 @@
     alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
 
-    separatorcolor:              #3C3C3C;
+    separatorcolor:              #FFFFFF;
     background-color:            #141414;
-    border-color: @selected-normal-foreground;
+    //border-color: @selected-normal-foreground;
+    border-color: @foreground;
 }
 
 window {
     background-color: @background;
     border:           1;
-    font:             "Noto Sans Regular 14";
+    font:             "Noto Sans Bold 10";
     fullscreen:       false;
-    padding:          24;
-    width:            600;
+    padding:          10;
+    width:            400;
 }
 
 mainbox {
-    padding: 0;
+    padding: 5;
     border:  0;
 }
 
@@ -74,12 +76,13 @@ listview {
     border-color: @separatorcolor;
     spacing:      2px;
     fixed-height: 0;
+    // Separator Border Width
     border:       1px dash 0px 0px;
     lines:        5;
 }
 
 element {
-    padding: 10px;
+    padding: 5px;
     border:  0;
 }
 
@@ -152,7 +155,7 @@ button selected {
 }
 
 inputbar {
-    padding:    10px;
+    padding:    20px;
     spacing:    0px;
     text-color: @normal-foreground;
     children:   [prompt, textbox-prompt-colon, entry, case-indicator];

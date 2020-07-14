@@ -36,8 +36,7 @@
         bindsym $mod+Return exec terminator
 
         # Hide and unhide Polybar
-        bindsym $mod+F12 exec polybar-msg cmd show
-        bindsym $mod+F11 exec polybar-msg cmd hide
+        bindsym $mod+F12 exec polybar-msg cmd toggle
 
         # Start dmenu (a program launcher)
         # after drun: -sidebar-mode
@@ -164,15 +163,16 @@
         #set $WS0 "10: 10"
 
         set $WS1 "1: "
-        set $WS2 "2: "
-        set $WS3 "3: "
+        set $WS2 "2: "
+        set $WS3 "3: "
         set $WS4 "4: "
         set $WS5 "5: "
         set $WS6 "5: "
         set $WS7 "7: "
         set $WS8 "8: "
         set $WS9 "9: "
-        set $WS0 "10: "
+        set $WS0 "10: "
+        #set $WS0 "10: "
 
 # switch to workspace
         bindsym $mod+1 workspace $WS1
@@ -201,11 +201,12 @@
 
 # applications shortcuts
         #bindsym $mod+F2 workspace $WS1; exec application
-        bindsym $mod+F1; exec opera
+        bindsym $mod+F1; exec vivaldi-stable
+        #bindsym $mod+F2; exec terminator --command=ranger
         bindsym $mod+F2; exec nautilus
-        bindsym $mod+F3; exec codium
-        bindsym $mod+F4; exec figma
-        bindsym $mod+F5; exec 
+        bindsym $mod+F3; exec ~/Applications/VSCodium-1.42.1-1581651960.glibc2.16-x86_64_eb5a396f3220533ccd1a49870bef0faf.AppImage
+        bindsym $mod+F4; exec pycharm
+        bindsym $mod+F5; exec figma
         bindsym $mod+F6; exec 
         bindsym $mod+F7; exec spotify
         bindsym $mod+F8; exec qbittorrent
@@ -240,20 +241,36 @@
         bindsym $mod+r mode "resize"
 
 # Colors (Vitorino)
+#set $background #141414
+#set $foreground #DCDCDC
+#set $unfocused  #323232
+#set $indicator  #FFDB9E
+#set $focused    #DCDCDC
+#set $urgent     #E94141
+
+# Colors Modern
 set $background #141414
 set $foreground #DCDCDC
 set $unfocused  #323232
-set $indicator  #FFDB9E
+set $indicator  #E04848
 set $focused    #DCDCDC
-set $urgent     #E94141
+set $urgent     #E04848
+
+# Atra
+#set $background #141414
+#set $foreground #DCDCDC
+#set $unfocused  #323232
+#set $indicator  #00B159
+#set $focused    #DCDCDC
+#set $urgent     #00B159
 
 # Colors (Arch Linux)
-#set $background #1a1a1a
-#set $foreground #ffffff
-#set $unfocused  #1a1a1a
-#set $indicator  #ffffff
-#set $focused    #1793d1
-#set $urgent     #ffeac7
+#set $background #1A1A1A
+#set $foreground #FFFFFF
+#set $unfocused  #1A1A1A
+#set $indicator  #FFFFFF
+#set $focused    #1793D1
+#set $urgent     #FFEAC7
 
 # Class                 Border      Background  Text        Indicator   Child indicator
 client.focused          $focused    $focused    $background $indicator  $focused
@@ -284,6 +301,8 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
                 for_window [class="Solaar"] floating enable
                 for_window [class="Piper"] floating enable
                 for_window [class="Colorpicker"] floating enable
+                #for_window [class="Nautilus"] floating enable
+
 
                 # Window position
                 #for_window [class="Wire"] move absolute position center
@@ -301,6 +320,7 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
                 # Resize floating windows to a specific size
                 for_window [class="Spotify"] resize set 2200 1200, move absolute position center
                 for_window [class="tutanota-desktop"] resize set 1600 1300, move absolute position center
+                #for_window [class="Nautilus"] resize set 900 1100, move absolute position center
 
                 #for_window [class="Typora"] move absolute position center
 
@@ -345,31 +365,34 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         bindsym $mod+Shift+F9 exec typora
 
         # Polybar
-        bindsym $mod+Shift+F8 exec sh ~/.config/polybar/launch
+        bindsym $mod+Shift+F8 exec sh ~/.config/polybar/polybar.sh
         bindsym $mod+Shift+F7 exec pkill polybar
 
         # Stalonetrays
         bindsym $mod+Shift+F6 exec sh ~/Scripts/Stalonetray.sh
         bindsym $mod+Shift+F5 exec sh ~/Scripts/KillStalonetray.sh
 
+        # Flameshot
+        bindsym Print exec flameshot gui
+
 # autostart
         exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
         exec --no-startup-id xsettingsd &
-        exec --no-startup-id picom --no-fading-openclose &
+        exec --no-startup-id picom
+        #exec --no-startup-id picom --no-fading-openclose &
+        #exec --no-startup-id picom --experimental-backends &
         exec --no-startup-id nm-applet &
         exec --no-startup-id dunst &
         exec --no-startup-id xow &
         exec --no-startup-id redshift-gtk &
-        exec --no-startup-id todoist &
         exec --no-startup-id solaar &
-        exec --no-startup-id discord &
+        #exec --no-startup-id discord &
         exec --no-startup-id signal-desktop &
+        exec --no-startup-id telegram-desktop &
         exec --no-startup-id ~/.local/share/tresorit/tresorit &
         exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-        exec --no-startup-id ~/.config/polybar/launch &
+        exec --no-startup-id sh ~/.config/polybar/polybar.sh &
         #exec --no-startup-id ~/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &
-        exec --no-startup-id ~/Applications/tutanota-desktop-linux_aa4b7e795e53c8654ea418e65a025bc0.AppImage &
-        #exec --no-startup-id ~/session-messenger-desktop-linux-x86_64-1.0.7_4cc20dfd1738e0f1ecde1601f43c01c6.AppImage &
 
         #exec --no-startup-id picom --no-fading-openclose --experimental-backends
         #exec --no-startup-id /home/Fedora/Scripts/Personal/PocketCasts.sh &
@@ -378,9 +401,10 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
         # delay for proper tray launching
         #exec "sleep 15; /home/Fedora/.config/polybar/launch.sh &"
-        exec "sleep 5; riot-desktop &"
+        #exec "sleep 5; riot-desktop &"
         exec "sleep 3; imwheel &"
         exec "sleep 5; pulseaudio &"
+        exec "sleep 10; ~/Applications/tutanota-desktop-linux_5d1e5de6118f3ab76f6cf5f2f322ea5a.AppImage &"
         #exec "sleep 5;~/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
         #exec "sleep 20; /home/Fedora/.local/share/tresorit/tresorit &"
         #exec "sleep 20; /home/Fedora/Applications/Wire-3.12.2916_x86_64_3252bbfb900e4d83bbd61e18254aa372.AppImage &"
@@ -389,14 +413,15 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         #exec "sleep 30; polybar-msg cmd hide &"
 
 # set wallpaper
-        exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/Unsplash/levi-bare-ybw-0_Hfk1I-unsplash.jpg
+        exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg
 
 # window assignments
         # Assign app to workspace, example: assign [class="Apps"] $ws1
         #assign [class="Wire"] $WS3
-        assign [class="discord"] $WS3
-        assign [class="Signal"] $WS3
-        assign [class="Riot"] $WS3
+        assign [class="discord"] $WS2
+        assign [class="Signal"] $WS2
+        assign [class="TelegramDesktop"] $WS2
+        assign [class="Riot"] $WS2
         assign [class="figma"] $WS4
         assign [class="Gimp-2.10"] $WS4
         assign [class="Lutris"] $WS5
@@ -404,11 +429,14 @@ client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
         assign [class="pocket-casts-linux"] $WS6
         assign [class="Spotify"] $WS7
         assign [class="qBittorrent"] $WS8
+        assign [class="firefox"] $WS0
 
 # smart gaps
         #smart_gaps on
+        #gaps inner 5
+        #gaps outer 1
         #gaps inner 20
-        #gaps outer 2
+        #gaps outer 1
 
         # Only enable outer gaps when there is exactly one container.
         #smart_gaps inverse_outer

@@ -1,7 +1,7 @@
 configuration {
  modi:               "drun,ssh";
  theme:              "~/.config/rofi/themes/vitorino.rasi";
- font:               "Noto Sans Regular 14";
+ font:               "Noto Sans Regular 10";
  combi-modi:         "drun,ssh";
  width:              18;
  eh:                 1;
@@ -9,7 +9,7 @@ configuration {
  lines:              10;
  sidebar-mode:       false;
  location:           0;
- show-icons:         true;
+ show-icons:         false;
  icon-theme:         "Adwaita";
  separator-style:    none;
  }

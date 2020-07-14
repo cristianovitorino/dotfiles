@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER="cristianovitorino"
-TOKEN="13fedc82b96b195027e376fc34e0f952b53408a3"
+TOKEN="d8620e83f270add068a8d99bd5695ad7e61d6038"
 
 notifications=$(echo "user = \"$USER:$TOKEN\"" | curl -sf -K- https://api.github.com/notifications | jq ".[].unread" | grep -c true)
 

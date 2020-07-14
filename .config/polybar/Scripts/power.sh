@@ -28,7 +28,9 @@
 # - Run it
 
 #chosen=$(echo -e "[Cancel]\nLogout\nShutdown\nReboot\nSuspend\nHibernate\nHybrid-sleep\nSuspend-then-hibernate" | rofi -dmenu -i)
-chosen=$(echo -e "Lock\nLogout\nShutdown\nReboot\nSuspend\nHibernate\n[Cancel]" | rofi -dmenu -location 3 -xoffset -12 -yoffset 60 -lines 7 -width 11 -p "Poweroff" -i)
+#chosen=$(echo -e "Lock\nLogout\nShutdown\nReboot\nSuspend\nHibernate\n[Cancel]" | rofi -dmenu -location 3 -xoffset -25 -yoffset 25 -lines 7 -width 11 -p "Exit" -i)
+chosen=$(echo -e "Shutdown\nReboot\nLogout\nLock\nSuspend" | rofi -dmenu -location 3 -xoffset -8 -yoffset 27 -lines 7 -width 11 -p "Exit" -i)
+# Info about some states are available here:
 # Info about some states are available here:
 # https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html#Description
 
