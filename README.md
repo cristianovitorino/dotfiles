@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.codefactor.io/repository/github/estatra/dotfiles">
+  <a href="https://www.codefactor.io/repository/github/estatra/dotfiles/">
     <img src="https://www.codefactor.io/repository/github/estatra/dotfiles/badge" alt="CodeFactor">
   </a>
   <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y79WNXRNJCHB4&source=url">
