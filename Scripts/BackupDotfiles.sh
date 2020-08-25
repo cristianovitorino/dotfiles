@@ -119,6 +119,7 @@ cp -f $HOME/.config/dunst/dunstrc $HOME/Development/dotfiles/.config/dunst/
 cp -f -avr $HOME/Scripts/ $HOME/Development/dotfiles/
 cp -f -avr $HOME/.config/ranger/ $HOME/Development/dotfiles/.config/
 cp -f -avr $HOME/.config/polybar/ $HOME/Development/dotfiles/.config/
+cp -f -avr $HOME/.config/spicetify $HOME/Development/dotfiles/.config/
 
 sleep 2
 

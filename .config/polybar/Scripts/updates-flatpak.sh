@@ -7,7 +7,7 @@ fi
 updates=$((updates - 5))
 
 if [ "$updates" -gt 0 ]; then
-    echo "$updates     "
+    echo " $updates       "
     notify-send -u normal "New Flatpak updates are available"
 else
     echo ""

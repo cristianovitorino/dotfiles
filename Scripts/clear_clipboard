@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+cd ~/Scripts
+
+xclip -selection clipboard clipboard_trash
+xclip -i /dev/null

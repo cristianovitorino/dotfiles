@@ -112,6 +112,26 @@ fi
 
 sleep 1
 
+if [[ -d "$HOME/.config/spicetify" ]]
+then
+    echo "'$HOME/.config/spicetify' directory already exists. Proceeding..."
+else
+    echo "'$HOME/.config/spicetify' directory doesn't exist. Creating..."
+    mkdir "$HOME/.config/spicetify"
+fi
+
+sleep 1
+
+if [[ -d "$HOME/.config/spicetify" ]]
+then
+    echo "'$HOME/.config/spicetify' directory already exists. Proceeding..."
+else
+    echo "'$HOME/.config/spicetify' directory doesn't exist. Creating..."
+    mkdir "$HOME/.config/spicetify"
+fi
+
+sleep 1
+
 echo "Everything is in check, copying files..."
 
 cd $HOME/Downloads/dotfiles
@@ -132,6 +152,7 @@ cp -f .config/BraveSoftware/Brave-Browser/Default/Bookmarks $HOME/.config/BraveS
 cp -f -avr Scripts/ $HOME/
 cp -f -avr .config/ranger/ $HOME/.config/
 cp -f -avr .config/polybar/ $HOME/.config/
+cp -f -avr .config/spicetify $HOME/.config/
 
 sleep 2
 
