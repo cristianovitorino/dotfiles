@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-sed -i '290 s/^/;/' ~/.config/polybar/polybar.conf
-
-sleep 1
-
-sed -i '296 s/^/;/' ~/.config/polybar/polybar.conf

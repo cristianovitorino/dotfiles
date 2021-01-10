@@ -9,4 +9,4 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 # Launch
 polybar -c $HOME/.config/polybar/polybar.conf main &
 
-echo "Bar launched..."
+echo "Bar launched!"

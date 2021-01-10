@@ -8,28 +8,26 @@
 //                            
 //                            
 //  
-//               Version 1.0.0
+//               Version 2.0.0
 //  
 //          Cristiano Vitorino
 //  https://github.com/cristianovitorino
 //  
 
 * {
-    background:                  #141414;
-    foreground:                  #DCDCDC;
+    background:                  #0F0F0F;
+    foreground:                  #2B2B2B;
 
-    normal-background:           #141414;
+    normal-background:           #0F0F0F;
     normal-foreground:           @foreground;
-    //selected-normal-background:  #101010;
-    selected-normal-foreground:  #8BE9FD;
+    selected-normal-foreground:  #FDF0ED;
     alternate-normal-background: @normal-background;
     alternate-normal-foreground: @normal-foreground;
 
-    urgent-background:           #ffdb9e20;
+    urgent-background:           #E04848;
     urgent-foreground:           @foreground;
     selected-urgent-background:  @urgent-background;
-    //selected-urgent-foreground:  #E04848;
-    selected-urgent-foreground:  #E04848;
+    selected-urgent-foreground:  #E94141;
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @urgent-foreground;
 
@@ -40,18 +38,17 @@
     alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
 
-    separatorcolor:              #FFFFFF;
-    background-color:            #141414;
-    //border-color: @selected-normal-foreground;
+    separatorcolor:              #2B2B2B;
+    background-color:            #0F0F0F;
     border-color: @foreground;
 }
 
 window {
     background-color: @background;
     border:           1;
-    font:             "Noto Sans Bold 10";
+    font:             "Noto Sans SemiBold 12";
     fullscreen:       false;
-    padding:          10;
+    padding:          40;
     width:            400;
 }
 

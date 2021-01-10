@@ -8,7 +8,7 @@
 #                                        
 #                                        
 #  
-#                           Version 1.0.0
+#                           Version 1.1.0
 #  
 #                      Cristiano Vitorino
 #    https://github.com/cristianovitorino
@@ -16,8 +16,7 @@
 
 # .bash_profile
 export PATH=$PATH:$HOME/Applications/
-export PATH=$PATH:$HOME/Scripts/Personal
-export PATH=$PATH:$HOME/Applications/mdBook
+export PATH=$PATH:$HOME/scripts/
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then

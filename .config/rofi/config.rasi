@@ -1,7 +1,7 @@
 configuration {
  modi:               "drun,ssh";
- theme:              "~/.config/rofi/themes/atra.rasi";
- font:               "Noto Sans Regular 10";
+ theme:              "~/.config/rofi/themes/vitorino.rasi";
+ font:               "Noto Sans SemiBold 11";
  combi-modi:         "drun,ssh";
  width:              18;
  eh:                 1;

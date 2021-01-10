@@ -8,7 +8,7 @@
 #                                                    
 #                                                    
 #  
-#                                       Version 1.0.0
+#                                       Version 1.1.0
 #  
 #                                  Cristiano Vitorino
 #                https://github.com/cristianovitorino
@@ -18,18 +18,8 @@
 # ~/.bashrc
 #
 
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-#alias ls='ls --color=auto'
-
-# advcp
-#alias cp='advcp -gR'
-#alias mv='advmv -g'
-
-# Check weather
-#alias wt='curl wttr.in/Cariacica'
 
 # navi
 source <(navi widget bash)
@@ -44,12 +34,8 @@ source $(which shml)
 # Custom PS1 by Cristiano Vitorino.
 # GitHub - @cristianovitorino
 # Twitter - @cristvit
-#PS1="\n╔═══════════════$(bgcolor lightblue)$(color white) ARCH LINUX $(color end)$(bgcolor end)═$(bgcolor yellow)$(color black) FOLDER $(bgcolor lightyellow) \w$ $(bgcolor end)$(color end) \n╚══\e[1;91m///$(color end) $(bgcolor white)$(color black) BASH $(color end)$(bgcolor end) $(color lightmagenta)$ $(color end)"
-
-#PS1="$(bgcolor white)$(color black) BASH $(color end)$(bgcolor end)$(bgcolor blue)$(color white)\w$ $(bgcolor end)$(color end) "
 
 PS1=" \e[38;5;173m \e[38;5;242m\w $(color end) \n $(color white) $(color end)"
-
 
 # Additional colors, the old way, for reference.
 
@@ -122,4 +108,5 @@ On_IBlue='\e[0;104m'    # Blue
 On_IPurple='\e[0;105m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
+
 export PATH="$HOME/.cargo/bin:$PATH"
