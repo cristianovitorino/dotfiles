@@ -11,4 +11,5 @@ git clone https://github.com/cristianovitorino/dotfiles.git
 cd $HOME/scripts/dotfiles/scripts
 sh install.sh
 sh restore.sh
+reboot
 ```
