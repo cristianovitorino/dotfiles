@@ -21,11 +21,11 @@
         set $mod Mod4
 
         # Requires xcape
-        #set $mod Mod3
+        #set $mod Mod34
 
         # Set font
         font pango: Noto Sans SemiBold 11
-        #font pango: Source Sans Pro Regular 12
+        #font pango: Source Sans Pro Regular 11
 
         # Use Mouse+$mod to drag floating windows to their wanted position
         floating_modifier $mod
@@ -45,8 +45,8 @@
         # Pulse Audio volume controls
         bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+
         bindsym XF86AudioLowerVolume exec amixer -q set Master 10%-
-        bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 1%+
-        bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 1%-
+        bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 5%+
+        bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 5%-
         bindsym XF86AudioMute exec amixer set Master toggle
 
         # Media player controls
@@ -120,16 +120,27 @@
         bindsym Mod1+u border none
 
 # Set workspace name
-        set $WS1 "1:   Main"
-        set $WS2 "2:   Chat"
-        set $WS3 "3:   Media"
-        set $WS4 "4:   Work"
-        set $WS5 "5:   Workspace"
-        set $WS6 "5:   Workspace"
-        set $WS7 "7:   Workspace"
-        set $WS8 "8:   Workspace"
-        set $WS9 "9:   Workspace"
-        set $WS0 "10:   Workspace"
+        #set $WS1 "1:  Main"
+        #set $WS2 "2:  Chat"
+        #set $WS3 "3:  Media"
+        #set $WS4 "4:  Work"
+        #set $WS5 "5:  Workspace"
+        #set $WS6 "5:  Workspace"
+        #set $WS7 "7:  Workspace"
+        #set $WS8 "8:  Workspace"
+        #set $WS9 "9:  Workspace"
+        #set $WS0 "10:  Workspace"
+
+        set $WS1 "1: 1 "
+        set $WS2 "2: 2 "
+        set $WS3 "3: 3 "
+        set $WS4 "4: 4 "
+        set $WS5 "5: 5 "
+        set $WS6 "5: 6 "
+        set $WS7 "7: 7 "
+        set $WS8 "8: 8 "
+        set $WS9 "9: 9 "
+        set $WS0 "10: 10 "
 
 # Switch to workspace
         bindsym $mod+1 workspace $WS1
@@ -156,9 +167,9 @@
         bindsym $mod+Shift+0 move container to workspace $WS0
 
 # Applications shortcuts
-        bindsym $mod+F1; exec
-        bindsym $mod+F2; exec
-        bindsym $mod+F3; exec
+        bindsym $mod+F1; exec vivaldi
+        bindsym $mod+F2; exec thunar
+        bindsym $mod+F3; exec code
         bindsym $mod+F4; exec
         bindsym $mod+F5; exec
         bindsym $mod+F6; exec
@@ -278,23 +289,12 @@ set $urgent     #F43E5C
 #floating_minimum_size 2000 x 1000
 
 # Launching shortcuts
-        # Gnome Calculator
         bindsym $mod+Shift+F10 exec gnome-calculator
-
-        # Typora
         bindsym $mod+Shift+F9 exec typora
-
-        # Polybar
         bindsym $mod+Shift+F8 exec sh ~/.config/polybar/polybar.sh
         bindsym $mod+Shift+F7 exec pkill polybar
-
-        # Flameshot
         bindsym Print exec flameshot gui
-
-        # Chrome
-        bindsym $mod+Shift+F11 exec google-chrome
-
-        # Firefox
+        bindsym $mod+Shift+F11 exec chromium-browser
         bindsym $mod+Shift+F12 exec firefox
 
 # Autostart
@@ -303,7 +303,10 @@ set $urgent     #F43E5C
                 #exec --no-startup-id picom --no-fading-openclose &
                 #exec --no-startup-id picom --experimental-backends &
 
-        # Fedora
+        # xinput for flat mouse acceleration
+        exec --no-startup-id xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1 &
+
+        # Fedora auth agent
         exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
 
         # Other
@@ -317,7 +320,7 @@ set $urgent     #F43E5C
         exec --no-startup-id sh ~/.config/polybar/polybar.sh &
 
         # Delay for proper tray launching
-        exec "sleep 3; imwheel &"
+        exec "sleep 3; imwheel -b 45 &"
         exec "sleep 5; pulseaudio &"
         #exec "sleep 10; ~/Applications/tutanota-desktop-linux_b4e89888e907d7df5a3d6694abc9bbe8.AppImage"
 
@@ -333,9 +336,9 @@ set $urgent     #F43E5C
         assign [class="firefox"] $WS0
 
 # Smart gaps
-        smart_gaps on
-        gaps inner 40
-        gaps outer 1
+        #smart_gaps on
+        #gaps inner 40
+        #gaps outer 1
 
         #gaps inner 30
         #gaps outer 1

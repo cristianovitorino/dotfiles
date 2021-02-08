@@ -31,8 +31,8 @@ cp -f .Xmodmap $HOME/
 cp -f .bash_profile $HOME/
 cp -f .bashrc $HOME/
 cp -f .hidden $HOME/
-cp -f -avr .config/ $HOME/.config/
-cp -f -avr scripts/ $HOME/scripts/
+cp -f -avr .config/ $HOME/
+cp -f -avr scripts/ $HOME/
 
 sleep 2
 

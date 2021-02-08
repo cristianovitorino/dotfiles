@@ -16,15 +16,15 @@
 
 * {
     background:                  #0F0F0F;
-    foreground:                  #2B2B2B;
+    foreground:                  #353535;
 
     normal-background:           #0F0F0F;
     normal-foreground:           @foreground;
-    selected-normal-foreground:  #FDF0ED;
+    selected-normal-foreground:  #FFFFFF;
     alternate-normal-background: @normal-background;
     alternate-normal-foreground: @normal-foreground;
 
-    urgent-background:           #E04848;
+    urgent-background:           #E94141;
     urgent-foreground:           @foreground;
     selected-urgent-background:  @urgent-background;
     selected-urgent-foreground:  #E94141;
@@ -38,9 +38,13 @@
     alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
 
-    separatorcolor:              #2B2B2B;
+    separatorcolor:              #353535;
     background-color:            #0F0F0F;
     border-color: @foreground;
+}
+
+element-icon {
+    size: 4ch;
 }
 
 window {
@@ -48,8 +52,8 @@ window {
     border:           1;
     font:             "Noto Sans SemiBold 12";
     fullscreen:       false;
-    padding:          40;
-    width:            400;
+    padding:          20;
+    width:            600;
 }
 
 mainbox {
