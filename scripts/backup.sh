@@ -33,6 +33,8 @@ cp -f $HOME/.Xmodmap $HOME/Git/dotfiles/
 cp -f $HOME/.bash_profile $HOME/Git/dotfiles/
 cp -f $HOME/.bashrc $HOME/Git/dotfiles/
 cp -f $HOME/.hidden $HOME/Git/dotfiles/
+cp -f $HOME/.imwheelrc $HOME/Git/dotfiles/
+cp -f $HOME/.profile $HOME/Git/dotfiles/
 cp -f -avr $HOME/scripts $HOME/Git/dotfiles/
 cp -f -avr $HOME/.config/i3 $HOME/Git/dotfiles/.config/
 cp -f -avr $HOME/.config/rofi $HOME/Git/dotfiles/.config/
