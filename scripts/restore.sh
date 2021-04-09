@@ -34,6 +34,10 @@ cp -f .hidden $HOME/
 cp -f -avr .config/ $HOME/
 cp -f -avr scripts/ $HOME/
 
+chmod u+x ~/scripts/maim-fullscreen.sh
+chmod u+x ~/scripts/maim-selection.sh
+chmod u+x ~/scripts/maim-window.sh
+
 sleep 2
 
 echo "...done!"
