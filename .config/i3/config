@@ -319,6 +319,7 @@ set $urgent     #F43E5C
         exec --no-startup-id telegram-desktop &
         #exec --no-startup-id ~/.local/share/tresorit/tresorit &
         #exec --no-startup-id sh ~/.config/polybar/polybar.sh &
+        exec --no-startup-id sh $HOME/.config/polybar/launch.sh --blocks
 
         # Delay for proper tray launching
         exec "sleep 3; imwheel -b 45 &"
