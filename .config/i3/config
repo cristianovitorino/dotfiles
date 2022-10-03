@@ -221,7 +221,7 @@ set $urgent     #F43E5C
         client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
 # Window rules. You can find the window class using xprop
-        for_window [class=".*"] border pixel 2
+        for_window [class=".*"] border pixel 1
         for_window [window_role="pop-up"] floating enable
         for_window [window_role="task_dialog"] floating enable
         for_window [title="Preferences$"] floating enable
@@ -338,8 +338,8 @@ set $urgent     #F43E5C
 
 # Smart gaps
         #smart_gaps on
-        #gaps inner 40
-        #gaps outer 1
+        gaps inner 5
+        gaps outer 5
 
         #gaps inner 30
         #gaps outer 1
