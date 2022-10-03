@@ -8,7 +8,7 @@
 #                            /\____/          \ \_\         
 #                            \_/__/            \/_/         
 #  
-#                                              Version 2.0.0
+#                                              Version 03.OUT.2022
 #  
 #                                         Cristiano Vitorino
 #                       https://github.com/cristianovitorino
@@ -24,20 +24,21 @@
         #set $mod Mod34
 
         # Set font
-        font pango: Noto Sans SemiBold 11
-        #font pango: Source Sans Pro Regular 11
+        font pango: Ubuntu Regular 12
+        #font pango: Source Sans Pro Regular 12
 
         # Use Mouse+$mod to drag floating windows to their wanted position
         floating_modifier $mod
 
         # Start a terminal
-        bindsym $mod+Return exec terminator
+        bindsym $mod+Return exec gnome-terminal
 
         # Hide and unhide Polybar
-        bindsym $mod+F12 exec polybar-msg cmd toggle
+        #bindsym $mod+F12 exec polybar-msg cmd toggle
 
-        # Start dmenu
-        bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 12'
+        # Start dmenu/rofi
+        #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 12'
+        bindsym $mod+d exec rofi -show drun
 
         # Picture-in-Picture window using $mod+spacebar to toggle
         #bindsym $mod+p exec "i3-msg 'floating toggle; sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 10px 10px;'"
@@ -167,8 +168,8 @@
         bindsym $mod+Shift+0 move container to workspace $WS0
 
 # Applications shortcuts
-        bindsym $mod+F1; exec vivaldi
-        bindsym $mod+F2; exec thunar
+        bindsym $mod+F1; exec firefox
+        bindsym $mod+F2; exec nautilus
         bindsym $mod+F3; exec code
         bindsym $mod+F4; exec
         bindsym $mod+F5; exec
@@ -180,13 +181,13 @@
 # Scripts shortcuts
         # Screenshots
                 # Selection
-                bindsym $mod+Control+1 exec ~/scripts/maim-selection.sh
+                bindsym $mod+Control+1 exec $HOME/Scripts/maim-selection.sh
 
                 # Fullscreen
-                bindsym $mod+Control+2 exec ~/scripts/maim-fullscreen.sh
+                bindsym $mod+Control+2 exec  $HOME/Scripts/maim-fullscreen.sh
 
                 # Window
-                bindsym $mod+Control+3 exec ~/scripts/maim-window.sh
+                bindsym $mod+Control+3 exec  $HOME/Scripts/maim-window.sh
 
 # Restart i3-gaps inplace (preserves your layout/session, can be used to upgrade i3)
         bindsym $mod+Shift+r restart
@@ -195,7 +196,7 @@
         bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
         bindsym $mod+Delete exec i3-msg exit
 
-# eResize window (you can also use the mouse for that)
+# Resize window (you can also use the mouse for that)
         mode "resize" {
                 bindsym Left resize shrink width 5 px or 5 ppt
                 bindsym Down resize grow height 5 px or 5 ppt
@@ -220,7 +221,7 @@ set $urgent     #F43E5C
         client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
 # Window rules. You can find the window class using xprop
-        for_window [class=".*"] border pixel 1
+        for_window [class=".*"] border pixel 2
         for_window [window_role="pop-up"] floating enable
         for_window [window_role="task_dialog"] floating enable
         for_window [title="Preferences$"] floating enable
@@ -290,8 +291,8 @@ set $urgent     #F43E5C
 
 # Launching shortcuts
         bindsym $mod+Shift+F10 exec gnome-calculator
-        bindsym $mod+Shift+F9 exec typora
-        bindsym $mod+Shift+F8 exec sh ~/.config/polybar/polybar.sh
+        bindsym $mod+Shift+F9 exec logseq
+        bindsym $mod+Shift+F8 exec sh $HOME/.config/polybar/polybar.sh
         bindsym $mod+Shift+F7 exec pkill polybar
         bindsym Print exec flameshot gui
         bindsym $mod+Shift+F11 exec chromium-browser
@@ -310,14 +311,14 @@ set $urgent     #F43E5C
         exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
 
         # Other
-        exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
+        #exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
         exec --no-startup-id xsettingsd &
         exec --no-startup-id nm-applet &
         exec --no-startup-id dunst &
         exec --no-startup-id solaar &
         exec --no-startup-id telegram-desktop &
-        exec --no-startup-id ~/.local/share/tresorit/tresorit &
-        exec --no-startup-id sh ~/.config/polybar/polybar.sh &
+        #exec --no-startup-id ~/.local/share/tresorit/tresorit &
+        #exec --no-startup-id sh ~/.config/polybar/polybar.sh &
 
         # Delay for proper tray launching
         exec "sleep 3; imwheel -b 45 &"
