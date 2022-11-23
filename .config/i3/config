@@ -227,7 +227,7 @@
 # Set wallpaper
     #exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/
 
-# Window assignments. Assign app to workspace, example: assign [class="Apps"] $ws1; Info can be acquired with " xprop"
+# Window assignments. Assign app to workspace, example: assign [class="Apps"] $WS1
     # command here
 
 # Smart gaps
