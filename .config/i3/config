@@ -15,196 +15,142 @@
 #
 
 # Base configuration
-        # Set modifier
-        # Alt (Control) = Mod4
-        # Left Control (Alt) = Mod1
-        set $mod Mod4
+    # Set modifier
+    # Alt (Control) = Mod4
+    # Left Control (Alt) = Mod1
+    set $mod Mod4
 
-        # Requires xcape
-        #set $mod Mod34
+# Requires xcape
+    #set $mod Mod34
 
-        # Set font
-        font pango: Ubuntu Regular 12
-        #font pango: Source Sans Pro Regular 12
+# Set font
+    font pango: Ubuntu Regular 12
+    #font pango: Source Sans Pro Regular 12
 
-        # Use Mouse+$mod to drag floating windows to their wanted position
-        floating_modifier $mod
+# Use Mouse+$mod to drag floating windows to their wanted position
+    floating_modifier $mod
 
-        # Start a terminal
-        bindsym $mod+Return exec gnome-terminal
+# Start a terminal
+    bindsym $mod+Return exec gnome-terminal
 
-        # Hide and unhide Polybar
-        #bindsym $mod+F12 exec polybar-msg cmd toggle
+# Hide and unhide Polybar
+    #bindsym $mod+F12 exec polybar-msg cmd toggle
 
-        # Start dmenu/rofi
-        #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 12'
-        bindsym $mod+d exec rofi -show drun
+# Start dmenu/rofi
+    #bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -columns 1 -font 'Source Sans Pro SemiBold 12'
+    bindsym $mod+d exec rofi -show drun
 
-        # Picture-in-Picture window using $mod+spacebar to toggle
-        #bindsym $mod+p exec "i3-msg 'floating toggle; sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 10px 10px;'"
+# Picture-in-Picture window using $mod+spacebar to toggle
+    #bindsym $mod+p exec "i3-msg 'floating toggle; sticky toggle; resize shrink width 10000px; resize grow width 400px; resize shrink height 10000px; resize grow height 250px;move position 10px 10px;'"
 
-        # Pulse Audio volume controls
-        bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+
-        bindsym XF86AudioLowerVolume exec amixer -q set Master 10%-
-        bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 5%+
-        bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 5%-
-        bindsym XF86AudioMute exec amixer set Master toggle
+# Pulse Audio volume controls
+    bindsym XF86AudioRaiseVolume exec amixer -q set Master 10%+
+    bindsym XF86AudioLowerVolume exec amixer -q set Master 10%-
+    bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 5%+
+    bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 5%-
+    bindsym XF86AudioMute exec amixer set Master toggle
 
-        # Media player controls
-                # All
-                bindsym XF86AudioPlay exec playerctl -a play-pause
-                bindsym XF86AudioStop exec playerctl -a stop
-                bindsym XF86AudioNext exec playerctl -a next
-                bindsym XF86AudioPrev exec playerctl -a previous
+# Media player controls
+    # All
+    bindsym XF86AudioPlay exec playerctl -a play-pause
+    bindsym XF86AudioStop exec playerctl -a stop
+    bindsym XF86AudioNext exec playerctl -a next
+    bindsym XF86AudioPrev exec playerctl -a previous
 
-                # Spotify
-                bindsym Control+XF86AudioPlay exec playerctl -p spotify play-pause
-                bindsym Control+XF86AudioStop exec playerctl -p spotify stop
-                bindsym Control+XF86AudioNext exec playerctl -p spotify next
-                bindsym Control+XF86AudioPrev exec playerctl -p spotify previous
+    # Spotify
+    bindsym Control+XF86AudioPlay exec playerctl -p spotify play-pause
+    bindsym Control+XF86AudioStop exec playerctl -p spotify stop
+    bindsym Control+XF86AudioNext exec playerctl -p spotify next
+    bindsym Control+XF86AudioPrev exec playerctl -p spotify previous
 
-                # Pocket Casts
-                bindsym Shift+XF86AudioPlay exec playerctl -p pocket_casts_linux play-pause
-                bindsym Shift+XF86AudioStop exec playerctl -p pocket_casts_linux stop
-                bindsym Shift+XF86AudioNext exec playerctl -p pocket_casts_linux next
-                bindsym Shift+XF86AudioPrev exec playerctl -p ppocket_casts_linux previous
+    # Pocket Casts
+    bindsym Shift+XF86AudioPlay exec playerctl -p pocket_casts_linux play-pause
+    bindsym Shift+XF86AudioStop exec playerctl -p pocket_casts_linux stop
+    bindsym Shift+XF86AudioNext exec playerctl -p pocket_casts_linux next
+    bindsym Shift+XF86AudioPrev exec playerctl -p ppocket_casts_linux previous
 
-        # Kill focused window
-        bindsym $mod+q kill
+# Kill focused window
+    bindsym $mod+q kill
 
-        # Focus follows mouse
-        focus_follows_mouse yes
+# Focus follows mouse
+    focus_follows_mouse yes
 
-        # Change focus
-        bindsym $mod+Left focus left
-        bindsym $mod+Down focus down
-        bindsym $mod+Up focus up
-        bindsym $mod+Right focus right
+# Change focus
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
 
-        # Move focused window
-        bindsym $mod+Shift+Left move left
-        bindsym $mod+Shift+Down move down
-        bindsym $mod+Shift+Up move up
-        bindsym $mod+Shift+Right move right
+# Move focused window
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
 
-        # Split in horizontal orientation
-        bindsym $mod+h split h
+# Split in horizontal/vertical orientation
+    bindsym $mod+h split h
+    bindsym $mod+v split v
 
-        # Split in vertical orientation
-        bindsym $mod+v split v
+# Enter fullscreen
+    bindsym $mod+f fullscreen
 
-        # Enter fullscreen
-        bindsym $mod+f fullscreen
+# Change container layout (stacked, tabbed, default)
+    bindsym $mod+Shift+s layout stacking
+    bindsym $mod+Shift+t layout tabbed
+    bindsym $mod+Shift+d layout default
 
-        # Change container layout (stacked, tabbed, default)
-        bindsym $mod+Shift+s layout stacking
-        bindsym $mod+Shift+t layout tabbed
-        bindsym $mod+Shift+d layout default
+# Change container layout split
+    bindsym $mod+s layout toggle split
 
-        # Change container layout split
-        bindsym $mod+s layout toggle split
+# Toggle tiling / floating
+    bindsym $mod+space floating toggle
 
-        # Toggle tiling / floating
-        bindsym $mod+space floating toggle
+# Change focus between tiling / floating windows
+    bindsym $mod+Shift+space focus mode_toggle
 
-        # Change focus between tiling / floating windows
-        bindsym $mod+Shift+space focus mode_toggle
-
-        # Window border settings
-        new_window pixel    0
-        new_float normal    0
-        hide_edge_borders   true
-
-        # Shortcut to change window border
-        bindsym Mod1+t border normal    0
-        bindsym Mod1+y border pixel     3
-        bindsym Mod1+u border none
+# Window border settings
+    new_window pixel    0
+    new_float normal    0
+    hide_edge_borders   true
 
 # Set workspace name
-        #set $WS1 "1:  Main"
-        #set $WS2 "2:  Chat"
-        #set $WS3 "3:  Media"
-        #set $WS4 "4:  Work"
-        #set $WS5 "5:  Workspace"
-        #set $WS6 "5:  Workspace"
-        #set $WS7 "7:  Workspace"
-        #set $WS8 "8:  Workspace"
-        #set $WS9 "9:  Workspace"
-        #set $WS0 "10:  Workspace"
-
-        set $WS1 "1: 1 "
-        set $WS2 "2: 2 "
-        set $WS3 "3: 3 "
-        set $WS4 "4: 4 "
-        set $WS5 "5: 5 "
-        set $WS6 "5: 6 "
-        set $WS7 "7: 7 "
-        set $WS8 "8: 8 "
-        set $WS9 "9: 9 "
-        set $WS0 "10: 10 "
+    set $WS1 "1: 1 "
+    set $WS2 "2: 2 "
+    set $WS3 "3: 3 "
+    set $WS4 "4: 4 "
+    set $WS5 "5: 5 "
+    set $WS6 "5: 6 "
+    set $WS7 "7: 7 "
+    set $WS8 "8: 8 "
+    set $WS9 "9: 9 "
+    set $WS0 "10: 10 "
 
 # Switch to workspace
-        bindsym $mod+1 workspace $WS1
-        bindsym $mod+2 workspace $WS2
-        bindsym $mod+3 workspace $WS3
-        bindsym $mod+4 workspace $WS4
-        bindsym $mod+5 workspace $WS5
-        bindsym $mod+6 workspace $WS6
-        bindsym $mod+7 workspace $WS7
-        bindsym $mod+8 workspace $WS8
-        bindsym $mod+9 workspace $WS9
-        bindsym $mod+0 workspace $WS0
+    # Example: bindsym $mod+1 workspace $WS1
 
 # Move focused container to workspace
-        bindsym $mod+Shift+1 move container to workspace $WS1
-        bindsym $mod+Shift+2 move container to workspace $WS2
-        bindsym $mod+Shift+3 move container to workspace $WS3
-        bindsym $mod+Shift+4 move container to workspace $WS4
-        bindsym $mod+Shift+5 move container to workspace $WS5
-        bindsym $mod+Shift+6 move container to workspace $WS6
-        bindsym $mod+Shift+7 move container to workspace $WS7
-        bindsym $mod+Shift+8 move container to workspace $WS8
-        bindsym $mod+Shift+9 move container to workspace $WS9
-        bindsym $mod+Shift+0 move container to workspace $WS0
+    # Example: bindsym $mod+Shift+1 move container to workspace $WS1
 
 # Applications shortcuts
-        bindsym $mod+F1; exec firefox
-        bindsym $mod+F2; exec nautilus
-        bindsym $mod+F3; exec code
-        bindsym $mod+F4; exec
-        bindsym $mod+F5; exec
-        bindsym $mod+F6; exec
-        bindsym $mod+F7; exec
-        bindsym $mod+F8; exec
-        bindsym $mod+F9; exec
+    # Example: bindsym $mod+F1; exec application
 
 # Scripts shortcuts
-        # Screenshots
-                # Selection
-                bindsym $mod+Control+1 exec $HOME/Scripts/maim-selection.sh
+    # Screenshots
+    # Selection
+    bindsym $mod+Control+1 exec $HOME/Scripts/maim-selection.sh
 
-                # Fullscreen
-                bindsym $mod+Control+2 exec  $HOME/Scripts/maim-fullscreen.sh
+    # Fullscreen
+    bindsym $mod+Control+2 exec  $HOME/Scripts/maim-fullscreen.sh
 
-                # Window
-                bindsym $mod+Control+3 exec  $HOME/Scripts/maim-window.sh
+    # Window
+    bindsym $mod+Control+3 exec  $HOME/Scripts/maim-window.sh
 
 # Restart i3-gaps inplace (preserves your layout/session, can be used to upgrade i3)
-        bindsym $mod+Shift+r restart
+    bindsym $mod+Shift+r restart
 
 # Exit i3-gaps
-        bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
-        bindsym $mod+Delete exec i3-msg exit
-
-# Resize window (you can also use the mouse for that)
-        mode "resize" {
-                bindsym Left resize shrink width 5 px or 5 ppt
-                bindsym Down resize grow height 5 px or 5 ppt
-                bindsym Up resize shrink height 5 px or 5 ppt
-                bindsym Right resize grow width 5 px or 5 ppt
-                bindsym Return mode "default"
-        }
-        bindsym $mod+r mode "resize"
+    bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
+    bindsym $mod+Delete exec i3-msg exit
 
 # Theme
 set $background #0f0f0f
@@ -220,126 +166,72 @@ set $urgent     #F43E5C
         client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocused
         client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
-# Window rules. You can find the window class using xprop
-        for_window [class=".*"] border pixel 1
-        for_window [window_role="pop-up"] floating enable
-        for_window [window_role="task_dialog"] floating enable
-        for_window [title="Preferences$"] floating enable
-        for_window [Class="Lxappearance"] floating enable
+# Window rules. Find the window class: "xprop" 
+    # Example 1: for_window [class=".*"] border pixel 1
+    # Example 2: for_window [window_role="Application"] floating enable
 
-        # Window state handling
-                # Floating
-                for_window [class="qBittorrent"] floating enable
-                for_window [class="Gnome-calculator"] floating enable
-                for_window [class="Vmplayer"] floating enable
-                for_window [class="Tresorit"] floating enable
-                for_window [class="Pavucontrol"] floating enable
-                for_window [class="Todoist"] floating enable
-                for_window [class="Spotify"] floating enable
-                for_window [class="tutanota-desktop"] floating enable
-                for_window [class="Solaar"] floating enable
-                for_window [class="Piper"] floating enable
-                for_window [class="TelegramDesktop"] floating enable
+# Window state handling
+    # Floating
+    # Example: for_window [class="Application"] floating enable
 
-                # Window positionq
-                for_window [class="Tresorit"] resize set 500 500, move absolute position center
-                for_window [class="qBittorrent"] move absolute position center
-                for_window [class="Pavucontrol"] move absolute position center
-                for_window [class="Gnome-calculator"] move absolute position center
-                for_window [class="Vmplayer"] move absolute position center
-                for_window [class="Todoist"] move absolute position center
-                for_window [class="Solaar"] move absolute position center
-                for_window [class="Piper"] move absolute position center
-                for_window [class="TelegramDesktop"] move absolute position center
+    # Window positionq
+    # Example: for_window [class="Application"] resize set 500 500, move absolute position center
 
-                # Resize floating windows to a specific size
-                for_window [class="Spotify"] resize set 1800 1200, move absolute position center
-                for_window [class="tutanota-desktop"] resize set 1600 1300, move absolute position center
+    # Resize floating windows to a specific size
+    # Example: for_window [class="Application"] resize set 1800 1200, move absolute position center
 
+# Scratchpad
+    # Mark for Scratchpad
+    # Example 1: for_window [class="Application"] mark "Emails", move scratchupad
+    # Example 2: for_window [class="Application"] mark "Notes", move scratchpad
 
-                # Scratchpad
-                        # Mark for Scratchpad
-                        for_window [class="tutanota-desktop"] mark "Emails", move scratchupad
-                        for_window [class="Todoist"] mark "Notes", move scratchpad
+# Move window to Scratchpad [TAGS: hidden hide]
+    # Example: for_window [class="Application"] move scratchpad
 
-                        # Move window to Scratchpad [TAGS: hidden hide]
-                        for_window [class="Todoist"] move scratchpad
-                        for_window [class="tutanota-desktop"] move scratchpad
-                        for_window [class="Tresorit"] move scratchpad
-                        for_window [class="Solaar"] move scratchpad
+# Make the currently focused window a scratchpad
+    bindsym $mod+Shift+minus move scratchpad
 
-                        # Make the currently focused window a scratchpad
-                        bindsym $mod+Shift+minus move scratchpad
+# Show specific scratchpad windows
+    bindsym $mod+minus scratchpad show
+    bindsym $mod+Control+e [con_mark="Emails"] scratchpad show
+    bindsym $mod+Control+n [con_mark="Notes"] scratchpad show
 
-                        # Show specific scratchpad windows
-                        bindsym $mod+minus scratchpad show
-                        bindsym $mod+Control+e [con_mark="Emails"] scratchpad show
-                        bindsym $mod+Control+n [con_mark="Notes"] scratchpad show
-
-        # Disable borders for specific windows
-        for_window [class="Todoist"] border pixel 0
-        for_window [class="mullvad vpn"] border pixel 0
-        for_window [class="Tresorit"] border pixel 0
-        for_window [class="qBittorrent"] border pixel 0
-        for_window [class="tutanota-desktop"] border pixel 0
-        for_window [class="TelegramDesktop"] border pixel 0
-        for_window [class="Spotify"] border pixel 0
-        for_window [class="Typora"] border pixel 0
+# Disable borders for specific windows
+    # Example: for_window [class="Application"] border pixel 0
 
 # Floating size
-#floating_minimum_size 2000 x 1000
+    #floating_minimum_size 2000 x 1000
 
 # Launching shortcuts
-        bindsym $mod+Shift+F10 exec gnome-calculator
-        bindsym $mod+Shift+F9 exec logseq
-        bindsym $mod+Shift+F8 exec sh $HOME/.config/polybar/polybar.sh
-        bindsym $mod+Shift+F7 exec pkill polybar
-        bindsym Print exec flameshot gui
-        bindsym $mod+Shift+F11 exec chromium-browser
-        bindsym $mod+Shift+F12 exec firefox
+    # Example: bindsym $mod+Shift+F1 exec application
 
 # Autostart
-        # Picom
-        exec --no-startup-id picom &
-                #exec --no-startup-id picom --no-fading-openclose &
-                #exec --no-startup-id picom --experimental-backends &
+    # Picom
+    exec --no-startup-id picom --experimental-backends &
 
-        # xinput for flat mouse acceleration
-        exec --no-startup-id xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1 &
+    # xinput for flat mouse acceleration
+    exec --no-startup-id xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1 &
 
-        # Fedora auth agent
-        exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
+    # Polkit
+    # Example: exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
 
-        # Other
-        #exec --no-startup-id sh "/opt/Mullvad VPN/mullvad-vpn" &
-        exec --no-startup-id xsettingsd &
-        exec --no-startup-id nm-applet &
-        exec --no-startup-id dunst &
-        exec --no-startup-id solaar &
-        exec --no-startup-id telegram-desktop &
-        #exec --no-startup-id ~/.local/share/tresorit/tresorit &
-        #exec --no-startup-id sh ~/.config/polybar/polybar.sh &
-        #exec --no-startup-id sh $HOME/.config/polybar/launch.sh --blocks
-        exec --no-startup-id polybar &
+    # Other
+    exec --no-startup-id xsettingsd &
+    exec --no-startup-id nm-applet &
+    exec --no-startup-id dunst &
+    exec --no-startup-id polybar &
 
-        # Delay for proper tray launching
-        exec "sleep 3; imwheel -b 45 &"
-        #exec "sleep 5; pulseaudio &"
-        #exec "sleep 10; ~/Applications/tutanota-desktop-linux_b4e89888e907d7df5a3d6694abc9bbe8.AppImage"
+    # Delay for proper tray launching
+    # Example: exec "sleep 2; application &"
 
 # Set wallpaper
-        exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/
+    #exec --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/
 
-# Window assignments. Assign app to workspace, example: assign [class="Apps"] $ws1
-        assign [class="TelegramDesktop"] $WS2
-        assign [class="discord"] $WS9
-        assign [class="figma"] $WS4
-        assign [class="Spotify"] $WS7
-        assign [class="qBittorrent"] $WS8
-        assign [class="firefox"] $WS0
+# Window assignments. Assign app to workspace, example: assign [class="Apps"] $ws1; Info can be acquired with " xprop"
+    # command here
 
 # Smart gaps
-    # smart_gaps on
+    smart_gaps on
     gaps inner 5
     gaps outer 5
 
