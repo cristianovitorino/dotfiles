@@ -112,24 +112,24 @@
     new_window pixel    0
     new_float normal    0
     hide_edge_borders   true
+  
+# Switch to workspace
+    bindsym $mod+1 workspace $WS1
+    bindsym $mod+1 workspace $WS2
+    bindsym $mod+1 workspace $WS3
+    bindsym $mod+1 workspace $WS4
+
+# Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace $WS1
+    bindsym $mod+Shift+1 move container to workspace $WS2
+    bindsym $mod+Shift+1 move container to workspace $WS3
+    bindsym $mod+Shift+1 move container to workspace $WS4
 
 # Set workspace name
     set $WS1 "1: 1 "
     set $WS2 "2: 2 "
     set $WS3 "3: 3 "
     set $WS4 "4: 4 "
-    set $WS5 "5: 5 "
-    set $WS6 "5: 6 "
-    set $WS7 "7: 7 "
-    set $WS8 "8: 8 "
-    set $WS9 "9: 9 "
-    set $WS0 "10: 10 "
-
-# Switch to workspace
-    # Example: bindsym $mod+1 workspace $WS1
-
-# Move focused container to workspace
-    # Example: bindsym $mod+Shift+1 move container to workspace $WS1
 
 # Applications shortcuts
     # Example: bindsym $mod+F1; exec application
