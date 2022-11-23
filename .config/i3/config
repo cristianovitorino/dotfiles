@@ -153,18 +153,18 @@
     bindsym $mod+Delete exec i3-msg exit
 
 # Theme
-set $background #0f0f0f
-set $foreground #FDF0ED
-set $unfocused  #0f0f0f
-set $focused    #4a4a4a
-set $indicator  #FFDB9E
-set $urgent     #F43E5C
+    set $background #0f0f0f
+    set $foreground #FDF0ED
+    set $unfocused  #0f0f0f
+    set $focused    #4a4a4a
+    set $indicator  #FFDB9E
+    set $urgent     #F43E5C
 
-        # Class                 Border      Background  Text        Indicator   Child indicator
-        client.focused          $focused    $focused    $background $indicator  $focused
-        client.focused_inactive $unfocused  $unfocused  $foreground $unfocused  $unfocused
-        client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocused
-        client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
+    # Class                 Border      Background  Text        Indicator   Child indicator
+    client.focused          $focused    $focused    $background $indicator  $focused
+    client.focused_inactive $unfocused  $unfocused  $foreground $unfocused  $unfocused
+    client.unfocused        $unfocused  $unfocused  $foreground $unfocused  $unfocused
+    client.urgent           $urgent     $urgent     $foreground $urgent     $urgent
 
 # Window rules. Find the window class: "xprop" 
     # Example 1: for_window [class=".*"] border pixel 1
