@@ -232,8 +232,8 @@
 
 # Smart gaps
     smart_gaps on
-    gaps inner 5
-    gaps outer 5
+    gaps inner 15
+    gaps outer 15
 
     # Only enable outer gaps when there is exactly one container.
     smart_gaps inverse_outer
