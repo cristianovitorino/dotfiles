@@ -1,18 +1,18 @@
-#         __
-#   __  /'__`\
-#  /\_\/\_\L\ \              __      __     _____     ____
-#  \/\ \/_/_\_<_  _______  /'_ `\  /'__`\  /\ '__`\  /',__\
+#         __                                                
+#   __  /'__`\                                              
+#  /\_\/\_\L\ \              __      __     _____     ____  
+#  \/\ \/_/_\_<_  _______  /'_ `\  /'__`\  /\ '__`\  /',__\ 
 #   \ \ \/\ \L\ \/\______\/\ \L\ \/\ \L\.\_\ \ \L\ \/\__, `\
 #    \ \_\ \____/\/______/\ \____ \ \__/.\_\\ \ ,__/\/\____/
-#     \/_/\/___/           \/___L\ \/__/\/_/ \ \ \/  \/___/
-#                            /\____/          \ \_\
-#                            \_/__/            \/_/
-#
+#     \/_/\/___/           \/___L\ \/__/\/_/ \ \ \/  \/___/ 
+#                            /\____/          \ \_\         
+#                            \_/__/            \/_/         
+#  
 #                                              Version 03.OUT.2022
-#
+#  
 #                                         Cristiano Vitorino
 #                       https://github.com/cristianovitorino
-#
+#  
 
 # Base configuration
         # Set modifier
@@ -339,23 +339,33 @@ set $urgent     #F43E5C
         assign [class="firefox"] $WS0
 
 # Smart gaps
-    # smart_gaps on
-    gaps inner 5
-    gaps outer 5
+        #smart_gaps on
+        ##gaps inner 5
+        ##gaps outer 5
 
-    # Only enable outer gaps when there is exactly one container.
-    smart_gaps inverse_outer
+        #gaps inner 30
+        #gaps outer 1
+
+        # Second setup
+        #gaps top 25
+        #gaps bottom 25
+        #gaps left 25
+        #gaps right 25
+        #gaps inner 20
+
+        # Only enable outer gaps when there is exactly one container.
+        #smart_gaps inverse_outer
 
 # Smart borders
-    # Activate (Always)
-    smart_borders on
+        # Activate (Always)
+        ##smart_borders on
 
-    # Activate (Only when there are effectively no gaps).
-    # smart_borders no_gapsbar
+        # Activate (Only when there are effectively no gaps).
+        #smart_borders no_gapsbar
 
 # Smart edge borders
-    # Hide edge borders only if there is one window with no gaps
-    hide_edge_borders smart_no_gaps
+        # Hide edge borders only if there is one window with no gaps
+        #hide_edge_borders smart_no_gaps
 
 # Hide edge borders for single windows
-    hide_edge_borders smart
+        hide_edge_borders smart
