@@ -320,6 +320,7 @@ set $urgent     #F43E5C
         #exec --no-startup-id ~/.local/share/tresorit/tresorit &
         #exec --no-startup-id sh ~/.config/polybar/polybar.sh &
         exec --no-startup-id sh $HOME/.config/polybar/launch.sh --blocks
+        exec --no-startup-id polybar &
 
         # Delay for proper tray launching
         exec "sleep 3; imwheel -b 45 &"
@@ -339,8 +340,8 @@ set $urgent     #F43E5C
 
 # Smart gaps
         #smart_gaps on
-        gaps inner 5
-        gaps outer 5
+        ##gaps inner 5
+        ##gaps outer 5
 
         #gaps inner 30
         #gaps outer 1
@@ -357,7 +358,7 @@ set $urgent     #F43E5C
 
 # Smart borders
         # Activate (Always)
-        smart_borders on
+        ##smart_borders on
 
         # Activate (Only when there are effectively no gaps).
         #smart_borders no_gapsbar
