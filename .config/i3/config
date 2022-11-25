@@ -126,10 +126,10 @@
     bindsym $mod+Shift+1 move container to workspace $WS4
 
 # Set workspace name
-    set $WS1 "1: 1 "
-    set $WS2 "2: 2 "
-    set $WS3 "3: 3 "
-    set $WS4 "4: 4 "
+    set $WS1 " 1 "
+    set $WS2 " 2 "
+    set $WS3 " 3 "
+    set $WS4 " 4 "
 
 # Applications shortcuts
     # Example: bindsym $mod+F1; exec application
@@ -232,8 +232,8 @@
 
 # Smart gaps
     smart_gaps on
-    gaps inner 15
-    gaps outer 15
+    gaps inner 20
+    gaps outer 20
 
     # Only enable outer gaps when there is exactly one container.
     smart_gaps inverse_outer
@@ -241,9 +241,6 @@
 # Smart borders
     # Activate (Always)
     smart_borders on
-
-    # Activate (Only when there are effectively no gaps).
-    # smart_borders no_gapsbar
 
 # Smart edge borders
     # Hide edge borders only if there is one window with no gaps
