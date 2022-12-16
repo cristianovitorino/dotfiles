@@ -213,7 +213,8 @@
     exec --no-startup-id xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1 &
 
     # Polkit
-    # Example: exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
+    # Example (GNOME): exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
+    exec --no-startup-id /usr/lib/polkit-1/polkit-agent-helper-1 &
 
     # Other
     exec --no-startup-id xsettingsd &
